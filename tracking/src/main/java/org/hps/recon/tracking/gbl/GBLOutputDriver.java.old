@@ -72,33 +72,7 @@ public class GBLOutputDriver extends Driver {
 
     //Spacing between top and bottom in the 2D histos
     private int mod = 5;
-
-    private boolean onlyPos  = false;
-    private boolean onlyEle  = false;
-
-    private double minMom = 0.5;
-    private double maxMom = 6.;
     
-    private double minPhi = -999.9;
-    private double maxPhi = 999.9;
-    
-    
-    public void setMinMom (double val) {
-        minMom = val;
-    }
-
-    public void setMaxMom (double val) {
-        maxMom = val;
-    }
-
-    public void setMinPhi (double val) {
-        minPhi = val;
-    }
-
-    public void setMaxPhi (double val) {
-        maxPhi = val;
-    }
-
     //Override the Z of the target.
     public void setBsZ (double input) {
         bsZ = input;
@@ -110,14 +84,6 @@ public class GBLOutputDriver extends Driver {
     
     public void setDoGBLkinks (boolean input) {
         b_doGBLkinks = input;
-    }
-
-    public void setOnlyPos (boolean input) {
-        onlyPos = input;
-    }
-
-    public void setOnlyEle (boolean input) {
-        onlyEle = input;
     }
 
     public void setTrackResidualsRelColName (String val) {
@@ -202,36 +168,24 @@ public class GBLOutputDriver extends Driver {
             if (trk.getTrackerHits().size() < nHits)
                 continue;
 
+
             //System.out.println("Track passed hits");
             
             Hep3Vector momentum = new BasicHep3Vector(trk.getTrackStates().get(0).getMomentum());
             
-            if (momentum.magnitude() < minMom)
+            if (momentum.magnitude() < 1.5)
                 continue;
             
-            if (momentum.magnitude() > maxMom)
+            if (momentum.magnitude() > 6)
                 continue;
-            
+
             //System.out.println("Track passed momentum");
             
             TrackState trackState = trk.getTrackStates().get(0);
-
-            if (onlyPos && trackState.getOmega() > 0.0)
-                continue;
-            
-            if (onlyEle && trackState.getOmega() < 0.0)
-                continue;
-            
-            if (Math.abs(trackState.getTanLambda()) < 0.015)
+            if (Math.abs(trackState.getTanLambda()) < 0.025)
                 continue;
             
             //System.out.println("Track passed tanLambda");
-            
-            if (Math.abs(trackState.getPhi()) < minPhi)
-                continue;
-
-            if (Math.abs(trackState.getPhi()) > maxPhi)
-                continue;
             
             GenericObject gblKink = GBLKinkData.getKinkData(event, trk);
             
@@ -381,9 +335,8 @@ public class GBLOutputDriver extends Driver {
             isTop = "_top";
         }
                 
-        //There is a sign flip in the charge
         String charge = "_pos";
-        if (trk.getCharge()>0)
+        if (trk.getCharge()<0)
             charge = "_neg";
         
         

@@ -50,9 +50,6 @@ import org.lcsim.event.RelationalTable;
 import org.lcsim.event.Track;
 import org.lcsim.event.base.BaseTrack;
 
-//Fiducial cuts on the calorimeter cluster
-import org.hps.record.triggerbank.TriggerModule;
-
 //import org.lcsim.event.base.BaseTrackState;
 //import org.lcsim.fit.helicaltrack.HelixUtils;
 import org.lcsim.geometry.FieldMap;
@@ -127,14 +124,10 @@ public class SimpleGBLTrajAliDriver extends Driver {
     private boolean enableAlignmentCuts = false;
     private List<AlignableDetectorElement>  Alignabledes = new ArrayList<AlignableDetectorElement>();
     private List<SiSensor> sensors = new ArrayList<SiSensor>();
-    private boolean onlyEle = false;
-    private boolean onlyPos = false;
     private boolean debugAlignmentDs = false;
     private boolean compositeAlign = false;
     private boolean constrainedFit = false;
     private boolean constrainedBSFit = false;
-    private double bsX = 0.0;
-    private double bsY = 0.0;
     private double bsZ = -7.5;
     private boolean constrainedD0Fit = false;
     private boolean constrainedZ0Fit = false;
@@ -142,17 +135,11 @@ public class SimpleGBLTrajAliDriver extends Driver {
     private boolean doCOMAlignment = false;
     private double seed_precision = 10000; // the constraint on q/p
     private double momC     = 4.55;
-    private double minPhi   = -10.0;
-    private double maxPhi   = 10.0;
     private double minMom   = 3;
     private double maxMom   = 6;
     private double maxtanL  = 0.025;
-    private int    nHitsCut = 5;
+    private int    nHitsCut = 6;
     private boolean useParticles = false;
-    private double minEoP = 0.0;
-    private double maxEoP = 10.0;
-    private double posEoP = -1;
-    private double eleEoP = -1;
 
     
     private GblTrajectoryMaker _gblTrajMaker;
@@ -165,28 +152,6 @@ public class SimpleGBLTrajAliDriver extends Driver {
         
     //Setting 0 is a single refit, 1 refit twice and so on..
     private int gblRefitIterations = 5; 
-
-
-    public void setMinEoP (double val) {
-        minEoP = val;
-    }
-
-    public void setMaxEoP (double val) {
-        maxEoP = val;
-    }
-
-    public void setPosEoP (double val) {
-        posEoP = val;
-    }
-
-    public void setEleEoP (double val) {
-        eleEoP = val;
-    }
-
-    //Switch the COM alignment 
-    public void setDoCOMAlignment(boolean val) {
-        doCOMAlignment = val;
-    }
     
     //Set -1 for no selection, 0-slot side tracks 1-hole side tracks
     public void setTrackSide (int side) {
@@ -202,14 +167,6 @@ public class SimpleGBLTrajAliDriver extends Driver {
 
     public void setConstrainedFit (boolean val) {
         constrainedFit = val;
-    }
-
-    public void setBsX(double val) {
-        bsX = val;
-    }
-
-    public void setBsY(double val) {
-        bsY = val;
     }
 
     public void setBsZ(double val) {
@@ -228,13 +185,6 @@ public class SimpleGBLTrajAliDriver extends Driver {
         debugAlignmentDs = val;
     }
 
-    public void setOnlyEle (boolean val) {
-        onlyEle = val;
-    }
-
-    public void setOnlyPos (boolean val) {
-        onlyPos = val;
-    }
 
     public void setEnableAlignmentCuts (boolean val) {
         enableAlignmentCuts = val;
@@ -345,14 +295,6 @@ public class SimpleGBLTrajAliDriver extends Driver {
         maxMom = val;
     }
 
-    public void setMinPhi(double val) {
-        minPhi = val;
-    }
-
-    public void setMaxPhi(double val) {
-        maxPhi = val;
-    }
-
     public void setUseParticles(boolean val) {
         useParticles = val;
     }
@@ -384,7 +326,7 @@ public class SimpleGBLTrajAliDriver extends Driver {
 
     @Override
     protected void detectorChanged(Detector detector) {
-        
+
         bFieldMap = detector.getFieldMap();
         
         if (aidaGBL == null)
@@ -487,15 +429,12 @@ public class SimpleGBLTrajAliDriver extends Driver {
 
         //If using Seed Tracker, get the hits from the event
         if (TrackType == 0) {
+
             hitToStrips = TrackUtils.getHitToStripsTable(event,helicalTrackHitRelationsCollectionName);
             hitToRotated =  TrackUtils.getHitToRotatedTable(event,rotatedHelicalTrackHitRelationsCollectionName);
         }
         
-        
-        // Create a mapping of matched Tracks to corresonding Clusters. 
-        HashMap<Track,Cluster> TrackClusterPairs = null;
-        
-        //Get the tracks from the particles - redundant, just loop on the map
+        //Get the tracks from the particles
 
         if (useParticles) {
             for (ReconstructedParticle particle : particles) {
@@ -503,9 +442,13 @@ public class SimpleGBLTrajAliDriver extends Driver {
                     continue;
                 tracks.add(particle.getTracks().get(0));
             }
-            
-            TrackClusterPairs = GetClustersFromParticles(particles);
         }
+        
+        // Create a mapping of matched Tracks to corresonding Clusters. 
+        HashMap<Track,Cluster> TrackClusterPairs = null;
+        
+        if (useParticles)
+            TrackClusterPairs = GetClustersFromParticles(particles);
         
         //Loop over the tracks
         for (Track track : tracks) {
@@ -532,16 +475,6 @@ public class SimpleGBLTrajAliDriver extends Driver {
                 //Get the track parameters
                 double[] trk_prms = track.getTrackParameters();
                 double tanLambda = trk_prms[BaseTrack.TANLAMBDA];
-                double omega = trk_prms[BaseTrack.OMEGA];
-                double phi = trk_prms[BaseTrack.PHI];
-                
-                if (onlyPos && omega > 0.0) {
-                    continue;
-                }
-                
-                if (onlyEle && omega < 0.0) {
-                    continue;
-                }
                 
                 //Momentum cut: 3.8 - 5.2
                 Hep3Vector momentum = new BasicHep3Vector(track.getTrackStates().get(0).getMomentum());
@@ -553,11 +486,8 @@ public class SimpleGBLTrajAliDriver extends Driver {
                     continue;
                 }
                 
-                if (phi < minPhi || phi > maxPhi) {
-                    continue;
-                }
-                
                 if (Math.abs(tanLambda) < maxtanL) {
+
                     continue;
                 }
                 
@@ -597,125 +527,31 @@ public class SimpleGBLTrajAliDriver extends Driver {
                 TrackState trackState = track.getTrackStates().get(0);
                 double trackp = new BasicHep3Vector(trackState.getMomentum()).magnitude();
                 double e_o_p = em_cluster.getEnergy() / trackp;
-
-                if (e_o_p < minEoP || e_o_p > maxEoP)
-                    continue;
                 
                 //compute the correction
                 momC = em_cluster.getEnergy();
                 
                 double[] trk_prms = track.getTrackParameters(); 
-                
+
                 if (trk_prms[BaseTrack.TANLAMBDA] > 0) {
                     aidaGBL.histogram1D(eopFolder+"Ecluster_top").fill(momC);
                     aidaGBL.histogram1D(eopFolder+"EoP_top").fill(momC/trackp);
-                    aidaGBL.histogram2D(eopFolder+"EoP_vs_phi_top").fill(trk_prms[BaseTrack.PHI],momC/trackp);
-                    aidaGBL.histogram2D(eopFolder+"EoP_vs_trackP_top").fill(trackp,momC/trackp);
-                    aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda_top").fill(trk_prms[BaseTrack.TANLAMBDA],momC/trackp);
-                    
-                    //Track sign is flipped
-                    if (track.getCharge() > 0) {
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_trackP_ele_top").fill(trackp,momC/trackp);
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda_ele_top").fill(trk_prms[BaseTrack.TANLAMBDA],momC/trackp);
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_phi_ele_top").fill(trk_prms[BaseTrack.PHI],momC/trackp);
-                    }
-                    else {
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_trackP_pos_top").fill(trackp,momC/trackp);
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda_pos_top").fill(trk_prms[BaseTrack.TANLAMBDA],momC/trackp);
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_phi_pos_top").fill(trk_prms[BaseTrack.PHI],momC/trackp);
-                    }
                 }
                 else {
                     aidaGBL.histogram1D(eopFolder+"Ecluster_bottom").fill(momC);
                     aidaGBL.histogram1D(eopFolder+"EoP_bottom").fill(momC/trackp);
-                    aidaGBL.histogram2D(eopFolder+"EoP_vs_phi_bottom").fill(trk_prms[BaseTrack.PHI],momC/trackp);
-                    aidaGBL.histogram2D(eopFolder+"EoP_vs_trackP_bottom").fill(trackp,momC/trackp);
-                    aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda_bottom").fill(trk_prms[BaseTrack.TANLAMBDA],momC/trackp);
-                    
-                    //Track sign is flipped
-                    if (track.getCharge() > 0) {
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_trackP_ele_bottom").fill(trackp,momC/trackp);
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda_ele_bottom").fill(trk_prms[BaseTrack.TANLAMBDA],momC/trackp);
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_phi_ele_bottom").fill(trk_prms[BaseTrack.PHI],momC/trackp);
-                    }
-                    else {
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_trackP_pos_bottom").fill(trackp,momC/trackp);
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda_pos_bottom").fill(trk_prms[BaseTrack.TANLAMBDA],momC/trackp);
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_phi_pos_bottom").fill(trk_prms[BaseTrack.PHI],momC/trackp);
-                    }
-                                        
                 }
-                
-                aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda").fill(trk_prms[BaseTrack.TANLAMBDA],momC/trackp);
-                aidaGBL.histogram2D(eopFolder+"EoP_vs_phi").fill(trk_prms[BaseTrack.PHI],momC/trackp);
-                aidaGBL.histogram3D(eopFolder+"EoP_vs_tanLambda_phi").fill(trk_prms[BaseTrack.TANLAMBDA],
-                                                                           trk_prms[BaseTrack.PHI],
-                                                                           momC/trackp);
-                
-                
-                
-                
-                if (TriggerModule.inFiducialRegion(em_cluster)) {
-                    
-                    if (trk_prms[BaseTrack.TANLAMBDA] > 0) {
-                        aidaGBL.histogram1D(eopFolder+"Ecluster_top_fid").fill(momC);
-                        aidaGBL.histogram1D(eopFolder+"EoP_top_fid").fill(momC/trackp);
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_trackP_top_fid").fill(trackp,momC/trackp);
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_phi_top_fid").fill(trk_prms[BaseTrack.PHI],momC/trackp);
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda_top_fid").fill(trk_prms[BaseTrack.TANLAMBDA],momC/trackp);
-                        
-                        //Track sign is flipped
-                        if (track.getCharge() > 0) {
-                            aidaGBL.histogram2D(eopFolder+"EoP_vs_trackP_ele_top_fid").fill(trackp,momC/trackp);
-                            aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda_ele_top_fid").fill(trk_prms[BaseTrack.TANLAMBDA],momC/trackp);
-                            aidaGBL.histogram2D(eopFolder+"EoP_vs_phi_ele_top_fid").fill(trk_prms[BaseTrack.PHI],momC/trackp);
-                        }
-                        else {
-                            aidaGBL.histogram2D(eopFolder+"EoP_vs_trackP_pos_top_fid").fill(trackp,momC/trackp);
-                            aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda_pos_top_fid").fill(trk_prms[BaseTrack.TANLAMBDA],momC/trackp);
-                            aidaGBL.histogram2D(eopFolder+"EoP_vs_phi_pos_top_fid").fill(trk_prms[BaseTrack.PHI],momC/trackp);
-                        }
-                    }
-                    else {
-                        aidaGBL.histogram1D(eopFolder+"Ecluster_bottom_fid").fill(momC);
-                        aidaGBL.histogram1D(eopFolder+"EoP_bottom_fid").fill(momC/trackp);
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_trackP_bottom_fid").fill(trackp,momC/trackp);
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_phi_bottom_fid").fill(trk_prms[BaseTrack.PHI],momC/trackp);
-                        aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda_bottom_fid").fill(trk_prms[BaseTrack.TANLAMBDA],momC/trackp);
 
-                        
-                        //Track sign is flipped
-                        if (track.getCharge() > 0) {
-                            aidaGBL.histogram2D(eopFolder+"EoP_vs_trackP_ele_bottom_fid").fill(trackp,momC/trackp);
-                            aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda_ele_bottom_fid").fill(trk_prms[BaseTrack.TANLAMBDA],momC/trackp);
-                            aidaGBL.histogram2D(eopFolder+"EoP_vs_phi_ele_bottom_fid").fill(trk_prms[BaseTrack.PHI],momC/trackp);
-                        }
-                        else {
-                            aidaGBL.histogram2D(eopFolder+"EoP_vs_trackP_pos_bottom_fid").fill(trackp,momC/trackp);
-                            aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda_pos_bottom_fid").fill(trk_prms[BaseTrack.TANLAMBDA],momC/trackp);
-                            aidaGBL.histogram2D(eopFolder+"EoP_vs_phi_pos_bottom_fid").fill(trk_prms[BaseTrack.PHI],momC/trackp);
-                        }
-                    }
-                    
-                    aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda_fid").fill(trk_prms[BaseTrack.TANLAMBDA],momC/trackp);
-                    aidaGBL.histogram2D(eopFolder+"EoP_vs_phi_fid").fill(trk_prms[BaseTrack.PHI],momC/trackp);
-                    aidaGBL.histogram3D(eopFolder+"EoP_vs_tanLambda_phi_fid").fill(trk_prms[BaseTrack.TANLAMBDA],
-                                                                                   trk_prms[BaseTrack.PHI],
-                                                                                   momC/trackp);
-                    
-                }
-                
+                aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda").fill(trk_prms[BaseTrack.TANLAMBDA],momC/trackp);
                 
             }
-            
+                
             
             
             //Track biasing example 
             //Re-fit the track?
             //Only active for ST tracks
-            //If momC < 0, only add a term in the covariance matrix to fix the momentum
             if (constrainedFit && TrackType == 0) {
-                
                 double momentum_param = 2.99792458e-04;
                 //Get the track parameters
                 double[] trk_prms = track.getTrackParameters();
@@ -725,52 +561,16 @@ public class SimpleGBLTrajAliDriver extends Driver {
                 //Bias the FEEs to beam energy. Correct the curvature by projecting on  X / Y plane
                 double tanLambda = trk_prms[BaseTrack.TANLAMBDA];
                 double cosLambda = 1. / (Math.sqrt(1+tanLambda*tanLambda));
+                double targetpT = momC * cosLambda;
+                //System.out.println("TargetpT: " + targetpT + " tanLambda = " + tanLambda);
+                double pt_bias = targetpT - pt;
+                //System.out.println("pT bias: " + pt_bias);
+                double corrected_pt = pt+pt_bias;
                 
-                
-                if (momC > 0 ) {
-                    double targetpT = momC * cosLambda;
-                    //System.out.println("TargetpT: " + targetpT + " tanLambda = " + tanLambda);
-                    double pt_bias = targetpT - pt;
-                    //System.out.println("pT bias: " + pt_bias);
-                    double corrected_pt = pt+pt_bias;
-                    double corrected_c = sign*(bfield*momentum_param)/(corrected_pt);
-                    trk_prms[BaseTrack.OMEGA] = corrected_c;
-                    ((BaseTrack)track).setTrackParameters(trk_prms,bfield);
-                }
-                
-                //Correct positrons. getCharge is flipped
-                if (posEoP>0 && (track.getCharge() < 0)) {
-                    
-                    double p =  sqrt(track.getPX()*track.getPX() + 
-                                     track.getPY()*track.getPY() + 
-                                     track.getPZ()*track.getPZ());
-                    
-                    
-                    //Provide the energy correction
-                    double targetP  = p * posEoP;
-                    double targetPt = targetP * cosLambda;
-                    double corrected_c = sign*(bfield*momentum_param)/(targetPt);
-                    trk_prms[BaseTrack.OMEGA] = corrected_c;
-                    ((BaseTrack)track).setTrackParameters(trk_prms,bfield);
-                }
-                
-                //Correct positrons
-                if (eleEoP>0 && (track.getCharge() > 0)) {
-                    
-                    double p =  sqrt(track.getPX()*track.getPX() + 
-                                     track.getPY()*track.getPY() + 
-                                     track.getPZ()*track.getPZ());
-                    
-                    
-                    //Provide the energy correction
-                    double targetP  = p * posEoP;
-                    double targetPt = targetP * cosLambda;
-                    double corrected_c = sign*(bfield*momentum_param)/(targetPt);
-                    trk_prms[BaseTrack.OMEGA] = corrected_c;
-                    ((BaseTrack)track).setTrackParameters(trk_prms,bfield);
-                }
-                
-            }//constrained fit
+                double corrected_c = sign*(bfield*momentum_param)/(corrected_pt);
+                trk_prms[BaseTrack.OMEGA] = corrected_c;
+                ((BaseTrack)track).setTrackParameters(trk_prms,bfield);
+            }
 
             if (constrainedD0Fit && TrackType == 0) {
                 double [] trk_prms = track.getTrackParameters();
@@ -830,7 +630,7 @@ public class SimpleGBLTrajAliDriver extends Driver {
             HelicalTrackFit htf = TrackUtils.getHTF(track);
             double bfac = Constants.fieldConversion * bfield;
             
-            GBLBeamSpotPoint bsPoint = FormBSPoint(htf, bsZ, bsY, bsX);
+            GBLBeamSpotPoint bsPoint = FormBSPoint(htf, bsZ);
 
             DoubleByReference Chi2 = new DoubleByReference(0.);
             DoubleByReference lostWeight = new DoubleByReference(0.);
@@ -1336,50 +1136,13 @@ public class SimpleGBLTrajAliDriver extends Driver {
         volumes.add("_top");
         volumes.add("_bottom");
 
-        List<String> charges = new ArrayList<String>();
-        charges.add("");
-        charges.add("_ele");
-        charges.add("_pos");
-        
         for (String vol : volumes) {
             
-            aidaGBL.histogram1D(eopFolder+"Ecluster"+vol,200,0,5);
-            aidaGBL.histogram1D(eopFolder+"EoP"+vol,200,0,2);
-            
-            double lmin = 0.;
-            double lmax = 0.08;
-            if (vol == "_bot") {
-                lmin = -0.08;
-                lmax = 0.;
-            }
-                        
-            for (String charge : charges) {
-                aidaGBL.histogram2D(eopFolder+"EoP_vs_trackP"+charge+vol,200,0,6,200,0,2);
-                aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda"+charge+vol,200,lmin,lmax,200,0,2);
-                aidaGBL.histogram2D(eopFolder+"EoP_vs_phi"+charge+vol,200,-0.2,0.2,200,0,2);
-            }
-                        
-            aidaGBL.histogram1D(eopFolder+"Ecluster"+vol+"_fid",200,0,5);
-            aidaGBL.histogram1D(eopFolder+"EoP"+vol+"_fid",200,0,2);
-            aidaGBL.histogram2D(eopFolder+"EoP_vs_trackP"+vol+"_fid",200,0,6,200,0,2);
-
-            for (String charge : charges) {
-                aidaGBL.histogram2D(eopFolder+"EoP_vs_trackP"+charge+vol+"_fid",200,0,6,200,0,2);
-                aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda"+charge+vol+"_fid",200,0.01,0.08,200,0,2);
-                aidaGBL.histogram2D(eopFolder+"EoP_vs_phi"+charge+vol+"_fid",200,-0.2,0.2,200,0,2);
-            }
+            aidaGBL.histogram1D(eopFolder+"Ecluster"+vol,200,0,8);
+            aidaGBL.histogram1D(eopFolder+"EoP"+vol,200,0,4);
         }
-        
-        aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda",200,-0.1,0.1,200,0,2);
-        aidaGBL.histogram2D(eopFolder+"EoP_vs_phi",200,-0.2,0.2,200,0,2);
-        aidaGBL.histogram3D(eopFolder+"EoP_vs_tanLambda_phi",200,-0.08,0.08,200,-0.2,0.2,200,0,2);
 
-        aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda_fid",200,-0.1,0.1,200,0,2);
-        aidaGBL.histogram2D(eopFolder+"EoP_vs_phi_fid",200,-0.2,0.2,200,0,2);
-        aidaGBL.histogram3D(eopFolder+"EoP_vs_tanLambda_phi_fid",200,-0.08,0.08,200,-0.2,0.2,200,0,2);
-
-        
-
+        aidaGBL.histogram2D(eopFolder+"EoP_vs_tanLambda",200,-0.1,0.1,200,0,4);
         
         
     }
@@ -1503,15 +1266,15 @@ public class SimpleGBLTrajAliDriver extends Driver {
             return null;
     }
     
-    GBLBeamSpotPoint FormBSPoint(HelicalTrackFit htf, double bsZ, double bsY, double bsX) {
+    GBLBeamSpotPoint FormBSPoint(HelicalTrackFit htf, double bsZ) {
         //Form the BeamsSpotPoint
         double [] center = new double[3];
         double [] udir   = new double[3];
         double [] vdir   = new double[3];
         
         center[0] = bsZ; //Z
-        center[1] = bsX;  //X
-        center[2] = bsY;  //Y
+        center[1] = 0.;  //X
+        center[2] = 0.;  //Y
         
         udir[0] = 0;    
         udir[1] = 0;
@@ -1524,8 +1287,8 @@ public class SimpleGBLTrajAliDriver extends Driver {
         
         //Hard coded uncertainties
         double[] bserror = new double[2];
-        bserror[0]=0.02;
-        bserror[1]=0.2;
+        bserror[0]=0.01;
+        bserror[1]=0.1;
         return GblUtils.gblMakeBsPoint(htf, center, udir, vdir, bserror);
     }
     
@@ -1680,11 +1443,7 @@ public class SimpleGBLTrajAliDriver extends Driver {
         return tracksAndclusters;
     }
     
-    //Returns the E/p or sagitta correction given the input variable (trackP, tanL, phi..)
-    private double getEoPCorrection(double xpar) {
-        return -999;
-    }
-
+    
 
     //This will compute and add to the buffers the derivatives 
     private void ComputeStructureDerivatives(GblPointJna gblpoint) {
