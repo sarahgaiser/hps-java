@@ -79,6 +79,9 @@ public class GBLOutputDriver extends Driver {
 
     private double minPhi = -999.9;
     private double maxPhi = 999.9;
+
+    private double minTanL = 0.015;
+    private double maxTanL = 999.9;
     
     private int nHits = 6;
     
@@ -106,6 +109,15 @@ public class GBLOutputDriver extends Driver {
     public void setMaxPhi (double val) {
         maxPhi = val;
     }
+
+    public void setMinTanL (double val) {
+        minTanL = val;
+    }
+
+    public void setMaxTanL (double val) {
+        maxTanL = val;
+    }
+
 
     //Override the Z of the target.
     public void setBsZ (double input) {
@@ -215,7 +227,10 @@ public class GBLOutputDriver extends Driver {
             //System.out.println("Track passed momentum");
             
             TrackState trackState = trk.getTrackStates().get(0);
-            if (Math.abs(trackState.getTanLambda()) < 0.015)
+            if (Math.abs(trackState.getTanLambda()) < minTanL)
+                continue;
+
+            if (Math.abs(trackState.getTanLambda()) > maxTanL)
                 continue;
             
             if (Math.abs(trackState.getPhi()) < minPhi)
