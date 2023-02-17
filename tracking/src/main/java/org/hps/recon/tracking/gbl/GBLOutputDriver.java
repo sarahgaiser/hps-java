@@ -81,6 +81,9 @@ public class GBLOutputDriver extends Driver {
     private double minPhi = -999.9;
     private double maxPhi = 999.9;
     
+    private double minTanL = 0.015;
+    private double maxTanL = 999.9;
+
     private int nHits = 6;
     
 
@@ -106,6 +109,14 @@ public class GBLOutputDriver extends Driver {
 
     public void setMaxPhi(double val) {
         maxPhi = val;
+    }
+
+    public void setMinTanL (double val) {
+        minTanL = val;
+    }
+
+    public void setMaxTanL (double val) {
+        maxTanL = val;
     }
 
     // Override the Z of the target.
@@ -169,23 +180,23 @@ public class GBLOutputDriver extends Driver {
           System.out.print(trk.getTrackerHits().size()+" ");
         }
         System.out.println();
-         */
+        */
 
         int TrackType = 0;
         if (trackCollectionName.contains("Kalman") || trackCollectionName.contains("KF")) {
             TrackType = 1;
         }
 
-        //System.out.println("Running on "+trackCollectionName);
+        // System.out.println("Running on "+trackCollectionName);
 
-        //RelationalTable trackMatchTable = null;
-        //trackMatchTable = new BaseRelationalTable(RelationalTable.Mode.ONE_TO_ONE, RelationalTable.Weighting.UNWEIGHTED);
-        //List<LCRelation> trackMatchRelation = event.get(LCRelation.class, "MatchedToGBLTrackRelations");
-        //for (LCRelation relation : trackMatchRelation) {
-        //    if (relation != null && relation.getFrom() != null && relation.getTo() != null) {
-        //        trackMatchTable.add(relation.getFrom(), relation.getTo());
-        //    }
-        //}
+        // RelationalTable trackMatchTable = null;
+        // trackMatchTable = new BaseRelationalTable(RelationalTable.Mode.ONE_TO_ONE, RelationalTable.Weighting.UNWEIGHTED);
+        // List<LCRelation> trackMatchRelation = event.get(LCRelation.class, "MatchedToGBLTrackRelations");
+        // for (LCRelation relation : trackMatchRelation) {
+        //     if (relation != null && relation.getFrom() != null && relation.getTo() != null) {
+        //         trackMatchTable.add(relation.getFrom(), relation.getTo());
+        //     }
+        // }
 
         RelationalTable hitToStrips = TrackUtils.getHitToStripsTable(event);
         RelationalTable hitToRotated = TrackUtils.getHitToRotatedTable(event);
@@ -219,6 +230,12 @@ public class GBLOutputDriver extends Driver {
 
             TrackState trackState = trk.getTrackStates().get(0);
             if (Math.abs(trackState.getTanLambda()) < 0.015)
+                continue;
+
+            if (Math.abs(trackState.getTanLambda()) < minTanL)
+                continue;
+
+            if (Math.abs(trackState.getTanLambda()) > maxTanL)
                 continue;
 
             if (Math.abs(trackState.getPhi()) < minPhi)
