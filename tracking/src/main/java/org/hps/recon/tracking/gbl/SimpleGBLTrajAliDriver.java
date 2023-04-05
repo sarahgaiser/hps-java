@@ -372,7 +372,7 @@ public class SimpleGBLTrajAliDriver extends Driver {
     }
 
     public void setUseParticles(boolean val) {
-        useParticles = val;
+	useParticles = val;
     }
     
     @Override

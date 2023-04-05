@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lcsim xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="http://www.lcsim.org/schemas/lcsim/1.0/lcsim.xsd">
+    <!-- 
+      Steering file for running 2019 Alignment on LCIO using Kalman Tracks
+      @author PF <pbutti@slac.stanford.edu>
+    -->
+    <execute>
+      
+      <!-- Enable the following if re-processing lcio files -->
+      <driver name="PreCleanupDriver"/>
+      
+      <driver name="PrintGeometryDriver"/>
+      
+      <driver name="CleanupDriver"/>
+    </execute>    
+    <drivers>    
+        
+      <driver name="PrintGeometryDriver" type="org.hps.analysis.examples.PrintGeometryDriver">
+      </driver>
+      
+        <driver name="PreCleanupDriver" type="org.hps.analysis.dataquality.ReadoutCleanupDriver">
+          <!-- FEE skims -->
+
+          <!--<collectionNames>FinalStateParticles UnconstrainedV0Candidates UnconstrainedV0Vertices TargetConstrainedV0Candidates TargetConstrainedV0Vertices BeamspotConstrainedV0Candidates BeamspotConstrainedV0Vertices GBLKinkData GBLKinkDataRelations MatchedToGBLTrackRelations HelicalTrackHits HelicalTrackHitRelations MatchedTracks GBLTracks MatchedToGBLTrackRelations RotatedHelicalTrackHits RotatedHelicalTrackHitRelations TrackData TrackDataRelations TrackResiduals TrackResidualsRelations RotatedHelicalTrackHits RotatedHelicalTrackHitRelations StripClusterer_SiTrackerHitStrip1D </collectionNames>-->
+        <collectionNames> GBLKinkData GBLKinkDataRelations GBLTracks MatchedToGBLTrackRelations </collectionNames>  
+
+        </driver>
+        
+        <!-- SVT reconstruction drivers -->
+        <driver name="CleanupDriver" type="org.lcsim.recon.tracking.digitization.sisim.config.ReadoutCleanupDriver"/>
+
+        <driver name="LCIOWriter" type="org.lcsim.util.loop.LCIODriver">
+            <outputFilePath>${outputFile}.slcio</outputFilePath>
+        </driver>       
+        <driver name="AidaSaveDriver" type="org.lcsim.job.AidaSaveDriver">
+            <outputFileName>${outputFile}.root</outputFileName>
+        </driver>
+        <driver name="AidaToRootSaveDriver" type="org.lcsim.job.AidaSaveDriver">
+            <outputFileName>${outputFile}.root</outputFileName>
+        </driver>
+        
+      </drivers>
+</lcsim>
+
