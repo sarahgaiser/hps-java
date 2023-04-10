@@ -1,0 +1,1361 @@
+Reading default logging config from logging.properties
+PrintGeometryDriver: ################# Print geometry ##########################
+class org.hps.analysis.examples.PrintGeometryDriver: All Detector Elements! 
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1
+Tracker
+Tracker_base_alignable
+Detector element informations: Tracker_base_alignable 
+[      21.336,      0.0000,      349.94]
+[
+1.0 0.0 0.0
+0.0 2.83276944882399E-16 1.0
+0.0 -1.0 2.83276944882399E-16
+
+]
+Tracker_alignable_supportRing80_bottom
+Detector element informations: Tracker_alignable_supportRing80_bottom 
+Tracker_alignable_fullmoduleLayer1_bottom
+Detector element informations: Tracker_alignable_fullmoduleLayer1_bottom 
+Tracker_alignable_fullmoduleLayer2_bottom
+Detector element informations: Tracker_alignable_fullmoduleLayer2_bottom 
+Tracker_alignable_fullmoduleLayer3_bottom
+Detector element informations: Tracker_alignable_fullmoduleLayer3_bottom 
+Tracker_alignable_fullmoduleLayer4_bottom
+Detector element informations: Tracker_alignable_fullmoduleLayer4_bottom 
+Tracker_alignable_UChannel90_bottom
+Detector element informations: Tracker_alignable_UChannel90_bottom 
+Tracker_alignable_fullmoduleLayer5_bottom
+Detector element informations: Tracker_alignable_fullmoduleLayer5_bottom 
+Tracker_alignable_fullmoduleLayer6_bottom
+Detector element informations: Tracker_alignable_fullmoduleLayer6_bottom 
+Tracker_alignable_fullmoduleLayer7_bottom
+Detector element informations: Tracker_alignable_fullmoduleLayer7_bottom 
+Tracker_alignable_supportRing80_top
+Detector element informations: Tracker_alignable_supportRing80_top 
+Tracker_alignable_fullmoduleLayer1_top
+Detector element informations: Tracker_alignable_fullmoduleLayer1_top 
+Tracker_alignable_fullmoduleLayer2_top
+Detector element informations: Tracker_alignable_fullmoduleLayer2_top 
+Tracker_alignable_fullmoduleLayer3_top
+Detector element informations: Tracker_alignable_fullmoduleLayer3_top 
+Tracker_alignable_fullmoduleLayer4_top
+Detector element informations: Tracker_alignable_fullmoduleLayer4_top 
+Tracker_alignable_UChannel90_top
+Detector element informations: Tracker_alignable_UChannel90_top 
+Tracker_alignable_fullmoduleLayer5_top
+Detector element informations: Tracker_alignable_fullmoduleLayer5_top 
+Tracker_alignable_fullmoduleLayer6_top
+Detector element informations: Tracker_alignable_fullmoduleLayer6_top 
+Tracker_alignable_fullmoduleLayer7_top
+Detector element informations: Tracker_alignable_fullmoduleLayer7_top 
+Tracker_layer2
+module_L1b_halfmodule_axial
+module_L1b_halfmodule_axial_sensor0
+module_L1t_halfmodule_stereo
+module_L1t_halfmodule_stereo_sensor0
+Tracker_layer1
+module_L1b_halfmodule_stereo
+module_L1b_halfmodule_stereo_sensor0
+module_L1t_halfmodule_axial
+module_L1t_halfmodule_axial_sensor0
+Tracker_layer4
+module_L2b_halfmodule_axial
+module_L2b_halfmodule_axial_sensor0
+module_L2t_halfmodule_stereo
+module_L2t_halfmodule_stereo_sensor0
+Tracker_layer3
+module_L2b_halfmodule_stereo
+module_L2b_halfmodule_stereo_sensor0
+module_L2t_halfmodule_axial
+module_L2t_halfmodule_axial_sensor0
+Tracker_layer6
+module_L3b_halfmodule_axial
+module_L3b_halfmodule_axial_sensor0
+module_L3t_halfmodule_stereo
+module_L3t_halfmodule_stereo_sensor0
+Tracker_layer5
+module_L3b_halfmodule_stereo
+module_L3b_halfmodule_stereo_sensor0
+module_L3t_halfmodule_axial
+module_L3t_halfmodule_axial_sensor0
+Tracker_layer8
+module_L4b_halfmodule_axial
+module_L4b_halfmodule_axial_sensor0
+module_L4t_halfmodule_stereo
+module_L4t_halfmodule_stereo_sensor0
+Tracker_layer7
+module_L4b_halfmodule_stereo
+module_L4b_halfmodule_stereo_sensor0
+module_L4t_halfmodule_axial
+module_L4t_halfmodule_axial_sensor0
+Tracker_layer10
+module_L5b_halfmodule_axial_hole
+module_L5b_halfmodule_axial_hole_sensor0
+module_L5b_halfmodule_axial_slot
+module_L5b_halfmodule_axial_slot_sensor0
+module_L5t_halfmodule_stereo_hole
+module_L5t_halfmodule_stereo_hole_sensor0
+module_L5t_halfmodule_stereo_slot
+module_L5t_halfmodule_stereo_slot_sensor0
+Tracker_layer9
+module_L5b_halfmodule_stereo_hole
+module_L5b_halfmodule_stereo_hole_sensor0
+module_L5b_halfmodule_stereo_slot
+module_L5b_halfmodule_stereo_slot_sensor0
+module_L5t_halfmodule_axial_hole
+module_L5t_halfmodule_axial_hole_sensor0
+module_L5t_halfmodule_axial_slot
+module_L5t_halfmodule_axial_slot_sensor0
+Tracker_layer12
+module_L6b_halfmodule_axial_hole
+module_L6b_halfmodule_axial_hole_sensor0
+module_L6b_halfmodule_axial_slot
+module_L6b_halfmodule_axial_slot_sensor0
+module_L6t_halfmodule_stereo_hole
+module_L6t_halfmodule_stereo_hole_sensor0
+module_L6t_halfmodule_stereo_slot
+module_L6t_halfmodule_stereo_slot_sensor0
+Tracker_layer11
+module_L6b_halfmodule_stereo_hole
+module_L6b_halfmodule_stereo_hole_sensor0
+module_L6b_halfmodule_stereo_slot
+module_L6b_halfmodule_stereo_slot_sensor0
+module_L6t_halfmodule_axial_hole
+module_L6t_halfmodule_axial_hole_sensor0
+module_L6t_halfmodule_axial_slot
+module_L6t_halfmodule_axial_slot_sensor0
+Tracker_layer14
+module_L7b_halfmodule_axial_hole
+module_L7b_halfmodule_axial_hole_sensor0
+module_L7b_halfmodule_axial_slot
+module_L7b_halfmodule_axial_slot_sensor0
+module_L7t_halfmodule_stereo_hole
+module_L7t_halfmodule_stereo_hole_sensor0
+module_L7t_halfmodule_stereo_slot
+module_L7t_halfmodule_stereo_slot_sensor0
+Tracker_layer13
+module_L7b_halfmodule_stereo_hole
+module_L7b_halfmodule_stereo_hole_sensor0
+module_L7b_halfmodule_stereo_slot
+module_L7b_halfmodule_stereo_slot_sensor0
+module_L7t_halfmodule_axial_hole
+module_L7t_halfmodule_axial_hole_sensor0
+module_L7t_halfmodule_axial_slot
+module_L7t_halfmodule_axial_slot_sensor0
+ECalScoring
+ECalScoring_layer1
+ECalScoring_BeamLeft_layer1_module0
+ECalScoring_BeamLeft_layer1_module0_sensor0
+ECalScoring_ElectronGap_layer1_module0
+ECalScoring_ElectronGap_layer1_module0_sensor0
+ECalScoring_BeamRight_layer1_module0
+ECalScoring_BeamRight_layer1_module0_sensor0
+ECalScoring_layer2
+ECalScoring_BeamLeft_layer2_module0
+ECalScoring_BeamLeft_layer2_module0_sensor0
+ECalScoring_ElectronGap_layer2_module0
+ECalScoring_ElectronGap_layer2_module0_sensor0
+ECalScoring_BeamRight_layer2_module0
+ECalScoring_BeamRight_layer2_module0_sensor0
+Ecal
+Ecal_crystal1
+Ecal_crystal2
+Ecal_crystal3
+Ecal_crystal4
+Ecal_crystal5
+Ecal_crystal6
+Ecal_crystal7
+Ecal_crystal8
+Ecal_crystal9
+Ecal_crystal10
+Ecal_crystal11
+Ecal_crystal12
+Ecal_crystal13
+Ecal_crystal14
+Ecal_crystal15
+Ecal_crystal16
+Ecal_crystal17
+Ecal_crystal18
+Ecal_crystal19
+Ecal_crystal20
+Ecal_crystal21
+Ecal_crystal22
+Ecal_crystal23
+Ecal_crystal24
+Ecal_crystal25
+Ecal_crystal26
+Ecal_crystal27
+Ecal_crystal28
+Ecal_crystal29
+Ecal_crystal30
+Ecal_crystal31
+Ecal_crystal32
+Ecal_crystal33
+Ecal_crystal34
+Ecal_crystal35
+Ecal_crystal36
+Ecal_crystal37
+Ecal_crystal38
+Ecal_crystal39
+Ecal_crystal40
+Ecal_crystal41
+Ecal_crystal42
+Ecal_crystal43
+Ecal_crystal44
+Ecal_crystal45
+Ecal_crystal46
+Ecal_crystal47
+Ecal_crystal48
+Ecal_crystal49
+Ecal_crystal50
+Ecal_crystal51
+Ecal_crystal52
+Ecal_crystal53
+Ecal_crystal54
+Ecal_crystal55
+Ecal_crystal56
+Ecal_crystal57
+Ecal_crystal58
+Ecal_crystal59
+Ecal_crystal60
+Ecal_crystal61
+Ecal_crystal62
+Ecal_crystal63
+Ecal_crystal64
+Ecal_crystal65
+Ecal_crystal66
+Ecal_crystal67
+Ecal_crystal68
+Ecal_crystal69
+Ecal_crystal70
+Ecal_crystal71
+Ecal_crystal72
+Ecal_crystal73
+Ecal_crystal74
+Ecal_crystal75
+Ecal_crystal76
+Ecal_crystal77
+Ecal_crystal78
+Ecal_crystal79
+Ecal_crystal80
+Ecal_crystal81
+Ecal_crystal82
+Ecal_crystal83
+Ecal_crystal84
+Ecal_crystal85
+Ecal_crystal86
+Ecal_crystal87
+Ecal_crystal88
+Ecal_crystal89
+Ecal_crystal90
+Ecal_crystal91
+Ecal_crystal92
+Ecal_crystal93
+Ecal_crystal94
+Ecal_crystal95
+Ecal_crystal96
+Ecal_crystal97
+Ecal_crystal98
+Ecal_crystal99
+Ecal_crystal100
+Ecal_crystal101
+Ecal_crystal102
+Ecal_crystal103
+Ecal_crystal104
+Ecal_crystal105
+Ecal_crystal106
+Ecal_crystal107
+Ecal_crystal108
+Ecal_crystal109
+Ecal_crystal110
+Ecal_crystal111
+Ecal_crystal112
+Ecal_crystal113
+Ecal_crystal114
+Ecal_crystal115
+Ecal_crystal116
+Ecal_crystal117
+Ecal_crystal118
+Ecal_crystal119
+Ecal_crystal120
+Ecal_crystal121
+Ecal_crystal122
+Ecal_crystal123
+Ecal_crystal124
+Ecal_crystal125
+Ecal_crystal126
+Ecal_crystal127
+Ecal_crystal128
+Ecal_crystal129
+Ecal_crystal130
+Ecal_crystal131
+Ecal_crystal132
+Ecal_crystal133
+Ecal_crystal134
+Ecal_crystal135
+Ecal_crystal136
+Ecal_crystal137
+Ecal_crystal138
+Ecal_crystal139
+Ecal_crystal140
+Ecal_crystal141
+Ecal_crystal142
+Ecal_crystal143
+Ecal_crystal144
+Ecal_crystal145
+Ecal_crystal146
+Ecal_crystal147
+Ecal_crystal148
+Ecal_crystal149
+Ecal_crystal150
+Ecal_crystal151
+Ecal_crystal152
+Ecal_crystal153
+Ecal_crystal154
+Ecal_crystal155
+Ecal_crystal156
+Ecal_crystal157
+Ecal_crystal158
+Ecal_crystal159
+Ecal_crystal160
+Ecal_crystal161
+Ecal_crystal162
+Ecal_crystal163
+Ecal_crystal164
+Ecal_crystal165
+Ecal_crystal166
+Ecal_crystal167
+Ecal_crystal168
+Ecal_crystal169
+Ecal_crystal170
+Ecal_crystal171
+Ecal_crystal172
+Ecal_crystal173
+Ecal_crystal174
+Ecal_crystal175
+Ecal_crystal176
+Ecal_crystal177
+Ecal_crystal178
+Ecal_crystal179
+Ecal_crystal180
+Ecal_crystal181
+Ecal_crystal182
+Ecal_crystal183
+Ecal_crystal184
+Ecal_crystal185
+Ecal_crystal186
+Ecal_crystal187
+Ecal_crystal188
+Ecal_crystal189
+Ecal_crystal190
+Ecal_crystal191
+Ecal_crystal192
+Ecal_crystal193
+Ecal_crystal194
+Ecal_crystal195
+Ecal_crystal196
+Ecal_crystal197
+Ecal_crystal198
+Ecal_crystal199
+Ecal_crystal200
+Ecal_crystal201
+Ecal_crystal202
+Ecal_crystal203
+Ecal_crystal204
+Ecal_crystal205
+Ecal_crystal206
+Ecal_crystal207
+Ecal_crystal208
+Ecal_crystal209
+Ecal_crystal210
+Ecal_crystal211
+Ecal_crystal212
+Ecal_crystal213
+Ecal_crystal214
+Ecal_crystal215
+Ecal_crystal216
+Ecal_crystal217
+Ecal_crystal218
+Ecal_crystal219
+Ecal_crystal220
+Ecal_crystal221
+Ecal_crystal222
+Ecal_crystal223
+Ecal_crystal224
+Ecal_crystal225
+Ecal_crystal226
+Ecal_crystal227
+Ecal_crystal228
+Ecal_crystal229
+Ecal_crystal230
+Ecal_crystal231
+Ecal_crystal232
+Ecal_crystal233
+Ecal_crystal234
+Ecal_crystal235
+Ecal_crystal236
+Ecal_crystal237
+Ecal_crystal238
+Ecal_crystal239
+Ecal_crystal240
+Ecal_crystal241
+Ecal_crystal242
+Ecal_crystal243
+Ecal_crystal244
+Ecal_crystal245
+Ecal_crystal246
+Ecal_crystal247
+Ecal_crystal248
+Ecal_crystal249
+Ecal_crystal250
+Ecal_crystal251
+Ecal_crystal252
+Ecal_crystal253
+Ecal_crystal254
+Ecal_crystal255
+Ecal_crystal256
+Ecal_crystal257
+Ecal_crystal258
+Ecal_crystal259
+Ecal_crystal260
+Ecal_crystal261
+Ecal_crystal262
+Ecal_crystal263
+Ecal_crystal264
+Ecal_crystal265
+Ecal_crystal266
+Ecal_crystal267
+Ecal_crystal268
+Ecal_crystal269
+Ecal_crystal270
+Ecal_crystal271
+Ecal_crystal272
+Ecal_crystal273
+Ecal_crystal274
+Ecal_crystal275
+Ecal_crystal276
+Ecal_crystal277
+Ecal_crystal278
+Ecal_crystal279
+Ecal_crystal280
+Ecal_crystal281
+Ecal_crystal282
+Ecal_crystal283
+Ecal_crystal284
+Ecal_crystal285
+Ecal_crystal286
+Ecal_crystal287
+Ecal_crystal288
+Ecal_crystal289
+Ecal_crystal290
+Ecal_crystal291
+Ecal_crystal292
+Ecal_crystal293
+Ecal_crystal294
+Ecal_crystal295
+Ecal_crystal296
+Ecal_crystal297
+Ecal_crystal298
+Ecal_crystal299
+Ecal_crystal300
+Ecal_crystal301
+Ecal_crystal302
+Ecal_crystal303
+Ecal_crystal304
+Ecal_crystal305
+Ecal_crystal306
+Ecal_crystal307
+Ecal_crystal308
+Ecal_crystal309
+Ecal_crystal310
+Ecal_crystal311
+Ecal_crystal312
+Ecal_crystal313
+Ecal_crystal314
+Ecal_crystal315
+Ecal_crystal316
+Ecal_crystal317
+Ecal_crystal318
+Ecal_crystal319
+Ecal_crystal320
+Ecal_crystal321
+Ecal_crystal322
+Ecal_crystal323
+Ecal_crystal324
+Ecal_crystal325
+Ecal_crystal326
+Ecal_crystal327
+Ecal_crystal328
+Ecal_crystal329
+Ecal_crystal330
+Ecal_crystal331
+Ecal_crystal332
+Ecal_crystal333
+Ecal_crystal334
+Ecal_crystal335
+Ecal_crystal336
+Ecal_crystal337
+Ecal_crystal338
+Ecal_crystal339
+Ecal_crystal340
+Ecal_crystal341
+Ecal_crystal342
+Ecal_crystal343
+Ecal_crystal344
+Ecal_crystal345
+Ecal_crystal346
+Ecal_crystal347
+Ecal_crystal348
+Ecal_crystal349
+Ecal_crystal350
+Ecal_crystal351
+Ecal_crystal352
+Ecal_crystal353
+Ecal_crystal354
+Ecal_crystal355
+Ecal_crystal356
+Ecal_crystal357
+Ecal_crystal358
+Ecal_crystal359
+Ecal_crystal360
+Ecal_crystal361
+Ecal_crystal362
+Ecal_crystal363
+Ecal_crystal364
+Ecal_crystal365
+Ecal_crystal366
+Ecal_crystal367
+Ecal_crystal368
+Ecal_crystal369
+Ecal_crystal370
+Ecal_crystal371
+Ecal_crystal372
+Ecal_crystal373
+Ecal_crystal374
+Ecal_crystal375
+Ecal_crystal376
+Ecal_crystal377
+Ecal_crystal378
+Ecal_crystal379
+Ecal_crystal380
+Ecal_crystal381
+Ecal_crystal382
+Ecal_crystal383
+Ecal_crystal384
+Ecal_crystal385
+Ecal_crystal386
+Ecal_crystal387
+Ecal_crystal388
+Ecal_crystal389
+Ecal_crystal390
+Ecal_crystal391
+Ecal_crystal392
+Ecal_crystal393
+Ecal_crystal394
+Ecal_crystal395
+Ecal_crystal396
+Ecal_crystal397
+Ecal_crystal398
+Ecal_crystal399
+Ecal_crystal400
+Ecal_crystal401
+Ecal_crystal402
+Ecal_crystal403
+Ecal_crystal404
+Ecal_crystal405
+Ecal_crystal406
+Ecal_crystal407
+Ecal_crystal408
+Ecal_crystal409
+Ecal_crystal410
+Ecal_crystal411
+Ecal_crystal412
+Ecal_crystal413
+Ecal_crystal414
+Ecal_crystal415
+Ecal_crystal416
+Ecal_crystal417
+Ecal_crystal418
+Ecal_crystal419
+Ecal_crystal420
+Ecal_crystal421
+Ecal_crystal422
+Ecal_crystal423
+Ecal_crystal424
+Ecal_crystal425
+Ecal_crystal426
+Ecal_crystal427
+Ecal_crystal428
+Ecal_crystal429
+Ecal_crystal430
+Ecal_crystal431
+Ecal_crystal432
+Ecal_crystal433
+Ecal_crystal434
+Ecal_crystal435
+Ecal_crystal436
+Ecal_crystal437
+Ecal_crystal438
+Ecal_crystal439
+Ecal_crystal440
+Ecal_crystal441
+Ecal_crystal442
+Hodoscope
+HodoscopePixel1
+HodoscopePixel2
+HodoscopePixel3
+HodoscopePixel4
+HodoscopePixel5
+HodoscopePixel6
+HodoscopePixel7
+HodoscopePixel8
+HodoscopePixel9
+HodoscopePixel10
+HodoscopePixel11
+HodoscopePixel12
+HodoscopePixel13
+HodoscopePixel14
+HodoscopePixel15
+HodoscopePixel16
+HodoscopePixel17
+HodoscopePixel18
+HodoscopePixel19
+HodoscopePixel20
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+             module_L1b_halfmodule_axial_sensor0: [      1.8749,     -7.9269,      62.095] [  6.1382e-17,     -1.0000, -0.00010000] [     0.99953,  3.0536e-06,   -0.030536] [    0.030536, -9.9953e-05,     0.99953]
+Get Sensors local to global transformation
+[      1.8749,     -7.9269,      62.095]
+[
+6.138236010515101E-17 0.9995336782478849 0.03053565208496251
+-0.9999999950000001 3.053565203467871E-6 -9.995336765818829E-5
+-9.999999983332528E-5 -0.03053565193228425 0.9995336732502166
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[   -0.019564,     -7.9269,      62.123]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+            module_L1t_halfmodule_stereo_sensor0: [      2.1698,      7.7996,      46.184] [    0.099787,     0.99500,  -0.0031373] [    -0.99454,    0.099836,    0.030267] [    0.030429,  9.9954e-05,     0.99954]
+Get Sensors local to global transformation
+[      2.1698,      7.7996,      46.184]
+[
+0.0997871880516178 -0.9945434213073807 0.030428608823956215
+0.9950038565238073 0.09983644380690808 9.995369410032654E-5
+-0.0031372923838781383 0.030266609030421138 0.9995369376737901
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     0.76045,      7.7996,      46.228]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+            module_L1b_halfmodule_stereo_sensor0: [      2.3871,     -7.7853,      53.481] [    0.099787,    -0.99500,  -0.0031480] [    -0.99454,   -0.099836,    0.030373] [   -0.030536,  9.9953e-05,    -0.99953]
+Get Sensors local to global transformation
+[      2.3871,     -7.7853,      53.481]
+[
+0.0997868621530577 -0.9945401731923116 -0.03053565208496273
+-0.9950038554551579 -0.09983645445775736 9.995336765853363E-5
+-0.003147978878300575 0.030373117520454972 -0.9995336732502165
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     0.75504,     -7.7853,      53.528]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+             module_L1t_halfmodule_axial_sensor0: [      1.1489,      7.8105,      38.117] [  6.1357e-17,      1.0000, -0.00010000] [     0.99954, -3.0429e-06,   -0.030429] [   -0.030429, -9.9954e-05,    -0.99954]
+Get Sensors local to global transformation
+[      1.1489,      7.8105,      38.117]
+[
+6.135652560025975E-17 0.9995369426714747 -0.03042860882395649
+0.999999995 -3.042860877374628E-6 -9.995369410020268E-5
+-9.99999998329815E-5 -0.030428608671813448 -0.9995369376737901
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[   -0.013961,      7.8105,      38.134]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+             module_L2b_halfmodule_axial_sensor0: [      3.1518,     -8.3169,      112.08] [  6.1382e-17,     -1.0000, -0.00010000] [     0.99953,  3.0536e-06,   -0.030536] [    0.030536, -9.9953e-05,     0.99953]
+Get Sensors local to global transformation
+[      3.1518,     -8.3169,      112.08]
+[
+6.138236010515101E-17 0.9995336782478849 0.03053565208496251
+-0.9999999950000001 3.053565203467871E-6 -9.995336765818829E-5
+-9.999999983332528E-5 -0.03053565193228425 0.9995336732502166
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[    -0.26754,     -8.3169,      112.12]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+            module_L2t_halfmodule_stereo_sensor0: [      3.4414,      8.2446,      96.168] [    0.099787,     0.99500,  -0.0031373] [    -0.99454,    0.099836,    0.030267] [    0.030429,  9.9954e-05,     0.99954]
+Get Sensors local to global transformation
+[      3.4414,      8.2446,      96.168]
+[
+0.0997871880516178 -0.9945434213073807 0.030428608823956215
+0.9950038565238073 0.09983644380690808 9.995369410032654E-5
+-0.0031372923838781383 0.030266609030421138 0.9995369376737901
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     0.50713,      8.2446,      96.228]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+            module_L2b_halfmodule_stereo_sensor0: [      3.6640,     -8.2233,      103.47] [    0.099787,    -0.99500,  -0.0031480] [    -0.99454,   -0.099836,    0.030373] [   -0.030536,  9.9953e-05,    -0.99953]
+Get Sensors local to global transformation
+[      3.6640,     -8.2233,      103.47]
+[
+0.0997868621530577 -0.9945401731923116 -0.03053565208496273
+-0.9950038554551579 -0.09983645445775736 9.995336765853363E-5
+-0.003147978878300575 0.030373117520454972 -0.9995336732502165
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     0.50707,     -8.2233,      103.53]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+             module_L2t_halfmodule_axial_sensor0: [      2.4205,      8.1505,      88.101] [  6.1357e-17,      1.0000, -0.00010000] [     0.99954, -3.0429e-06,   -0.030429] [   -0.030429, -9.9954e-05,    -0.99954]
+Get Sensors local to global transformation
+[      2.4205,      8.1505,      88.101]
+[
+6.135652560025975E-17 0.9995369426714747 -0.03042860882395649
+0.999999995 -3.042860877374628E-6 -9.995369410020268E-5
+-9.99999998329815E-5 -0.030428608671813448 -0.9995369376737901
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[    -0.26729,      8.1505,      88.133]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+             module_L3b_halfmodule_axial_sensor0: [      6.4400,     -21.457,      211.52] [  6.1382e-17,     -1.0000, -0.00010000] [     0.99953,  3.0536e-06,   -0.030536] [    0.030536, -9.9953e-05,     0.99953]
+Get Sensors local to global transformation
+[      6.4400,     -21.457,      211.52]
+[
+6.138236010515101E-17 0.9995336782478849 0.03053565208496251
+-0.9999999950000001 3.053565203467871E-6 -9.995336765818829E-5
+-9.999999983332528E-5 -0.03053565193228425 0.9995336732502166
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[   -0.013465,     -21.457,      211.62]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+            module_L3t_halfmodule_stereo_sensor0: [      5.9450,      21.389,      195.66] [   -0.099787,    -0.99500,   0.0031373] [     0.99454,   -0.099836,   -0.030267] [    0.030429,  9.9954e-05,     0.99954]
+Get Sensors local to global transformation
+[      5.9450,      21.389,      195.66]
+[
+-0.09978718805161814 0.9945434213073804 0.030428608823956642
+-0.995003856523807 -0.0998364438069084 9.995369410032859E-5
+0.0031372923838781947 -0.03026660903042157 0.9995369376737899
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[   -0.024412,      21.389,      195.75]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+            module_L3b_halfmodule_stereo_sensor0: [      6.2151,     -21.456,      204.16] [   -0.099787,     0.99500,   0.0031480] [     0.99454,    0.099836,   -0.030373] [   -0.030536,  9.9953e-05,    -0.99953]
+Get Sensors local to global transformation
+[      6.2151,     -21.456,      204.16]
+[
+-0.09978686215305757 0.9945401731923116 -0.03053565208496257
+0.9950038554551579 0.09983645445775721 9.995336765809196E-5
+0.0031479788783001237 -0.03037311752045485 -0.9995336732502165
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[   -0.013763,     -21.456,      204.25]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+             module_L3t_halfmodule_axial_sensor0: [      5.7208,      21.388,      188.30] [  6.1357e-17,      1.0000, -0.00010000] [     0.99954, -3.0429e-06,   -0.030429] [   -0.030429, -9.9954e-05,    -0.99954]
+Get Sensors local to global transformation
+[      5.7208,      21.388,      188.30]
+[
+6.135652560025975E-17 0.9995369426714747 -0.03042860882395649
+0.999999995 -3.042860877374628E-6 -9.995369410020268E-5
+-9.99999998329815E-5 -0.030428608671813448 -0.9995369376737901
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[   -0.023922,      21.388,      188.38]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+             module_L4b_halfmodule_axial_sensor0: [      9.4936,     -22.920,      311.48] [  6.1382e-17,     -1.0000, -0.00010000] [     0.99953,  3.0536e-06,   -0.030536] [    0.030536, -9.9953e-05,     0.99953]
+Get Sensors local to global transformation
+[      9.4936,     -22.920,      311.48]
+[
+6.138236010515101E-17 0.9995336782478849 0.03053565208496251
+-0.9999999950000001 3.053565203467871E-6 -9.995336765818829E-5
+-9.999999983332528E-5 -0.03053565193228425 0.9995336732502166
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[  -0.0094081,     -22.920,      311.62]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+            module_L4t_halfmodule_stereo_sensor0: [      8.9878,      22.892,      295.61] [   -0.099787,    -0.99500,   0.0031373] [     0.99454,   -0.099836,   -0.030267] [    0.030429,  9.9954e-05,     0.99954]
+Get Sensors local to global transformation
+[      8.9878,      22.892,      295.61]
+[
+-0.09978718805161814 0.9945434213073804 0.030428608823956642
+-0.995003856523807 -0.0998364438069084 9.995369410032859E-5
+0.0031372923838781947 -0.03026660903042157 0.9995369376737899
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[   -0.031065,      22.892,      295.75]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+            module_L4b_halfmodule_stereo_sensor0: [      9.2686,     -22.919,      304.11] [   -0.099787,     0.99500,   0.0031480] [     0.99454,    0.099836,   -0.030373] [   -0.030536,  9.9953e-05,    -0.99953]
+Get Sensors local to global transformation
+[      9.2686,     -22.919,      304.11]
+[
+-0.09978686215305757 0.9945401731923116 -0.03053565208496257
+0.9950038554551579 0.09983645445775721 9.995336765809196E-5
+0.0031479788783001237 -0.03037311752045485 -0.9995336732502165
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[  -0.0097065,     -22.919,      304.25]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+             module_L4t_halfmodule_axial_sensor0: [      8.7637,      22.891,      288.25] [  6.1357e-17,      1.0000, -0.00010000] [     0.99954, -3.0429e-06,   -0.030429] [   -0.030429, -9.9954e-05,    -0.99954]
+Get Sensors local to global transformation
+[      8.7637,      22.891,      288.25]
+[
+6.135652560025975E-17 0.9995369426714747 -0.03042860882395649
+0.999999995 -3.042860877374628E-6 -9.995369410020268E-5
+-9.99999998329815E-5 -0.030428608671813448 -0.9995369376737901
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[   -0.030575,      22.891,      288.38]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+        module_L5b_halfmodule_axial_hole_sensor0: [     -34.873,     -26.660,      513.18] [  2.8339e-16,     -1.0000, -2.3118e-16] [     0.99954,  2.9004e-16,   -0.030479] [    0.030479, -2.2243e-16,     0.99954]
+Get Sensors local to global transformation
+[     -34.873,     -26.660,      513.18]
+[
+2.833881839177849E-16 0.9995354202008792 0.030478578770211703
+-1.0000000000000002 2.900445488641071E-16 -2.206952950010849E-16
+-2.3117835920274536E-16 -0.030478578770211706 0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     -50.506,     -26.660,      511.88]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+        module_L5b_halfmodule_axial_slot_sensor0: [      66.071,     -26.660,      510.10] [  2.8328e-16,      1.0000,  4.3261e-16] [    -0.99954,  2.6974e-16,    0.030479] [    0.030479, -4.4105e-16,     0.99954]
+Get Sensors local to global transformation
+[      66.071,     -26.660,      510.10]
+[
+2.8328188522018863E-16 -0.9995354202008792 0.030478578770211758
+1.0000000000000002 2.697417369189828E-16 -4.4273989992611626E-16
+4.3261254936709707E-16 0.03047857877021176 0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[      50.484,     -26.660,      511.88]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+       module_L5t_halfmodule_stereo_hole_sensor0: [     -35.298,      29.200,      497.56] [   -0.049956,    -0.99875,   0.0015233] [     0.99829,   -0.049979,   -0.030440] [    0.030479,  2.6021e-18,     0.99954]
+Get Sensors local to global transformation
+[     -35.298,      29.200,      497.56]
+[
+-0.04995594995825853 0.99828626119962 0.030478578770211706
+-0.9987502603949663 -0.04997916927067853 1.0757288488873528E-18
+0.0015232940474861224 -0.030440488483217433 0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     -50.455,      29.200,      496.25]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+       module_L5t_halfmodule_stereo_slot_sensor0: [      65.543,      24.146,      494.49] [    0.049956,     0.99875,  -0.0015233] [    -0.99829,    0.049979,    0.030440] [    0.030479, -2.1858e-16,     0.99954]
+Get Sensors local to global transformation
+[      65.543,      24.146,      494.49]
+[
+0.049955949958257986 -0.99828626119962 0.030478578770211595
+0.9987502603949663 0.049979169270677984 -2.2110582224230123E-16
+-0.0015232940474858793 0.030440488483217332 0.9995354202008792
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[      50.433,      24.146,      496.25]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+       module_L5b_halfmodule_stereo_hole_sensor0: [     -35.062,     -29.200,      505.32] [   -0.049956,     0.99875,   0.0015233] [     0.99829,    0.049979,   -0.030440] [   -0.030479,  5.6877e-16,    -0.99954]
+Get Sensors local to global transformation
+[     -35.062,     -29.200,      505.32]
+[
+-0.04995594995825853 0.99828626119962 -0.030478578770211706
+0.9987502603949663 0.049979169270678546 5.673664091213873E-16
+0.0015232940474866883 -0.030440488483217405 -0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     -50.455,     -29.200,      504.01]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+       module_L5b_halfmodule_stereo_slot_sensor0: [      65.780,     -24.146,      502.24] [    0.049956,    -0.99875,  -0.0015233] [    -0.99829,   -0.049979,    0.030440] [   -0.030479,  5.7159e-16,    -0.99954]
+Get Sensors local to global transformation
+[      65.780,     -24.146,      502.24]
+[
+0.049955949958257986 -0.99828626119962 -0.030478578770211713
+-0.9987502603949663 -0.049979169270678005 5.644441243195517E-16
+-0.0015232940474866744 0.030440488483217402 -0.9995354202008792
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[      50.433,     -24.146,      504.01]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+        module_L5t_halfmodule_axial_hole_sensor0: [     -35.604,      26.660,      489.20] [  2.8339e-16,      1.0000,  3.3538e-16] [     0.99954, -2.7278e-16,   -0.030479] [   -0.030479,  3.4386e-16,    -0.99954]
+Get Sensors local to global transformation
+[     -35.604,      26.660,      489.20]
+[
+2.833881839177849E-16 0.9995354202008792 -0.030478578770211703
+1.0000000000000002 -2.727767915073409E-16 3.45595385271415E-16
+3.353755305620527E-16 -0.030478578770211706 -0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     -50.506,      26.660,      487.89]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+        module_L5t_halfmodule_axial_slot_sensor0: [      65.339,      26.660,      486.12] [  2.8328e-16,     -1.0000, -1.3394e-16] [    -0.99954, -2.8701e-16,    0.030479] [   -0.030479,  1.2525e-16,    -0.99954]
+Get Sensors local to global transformation
+[      65.339,      26.660,      486.12]
+[
+2.8328188522018863E-16 -0.9995354202008792 -0.030478578770211758
+-1.0000000000000002 -2.87009494275749E-16 1.2355078034638366E-16
+-1.33941340397701E-16 0.03047857877021176 -0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[      50.484,      26.660,      487.89]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+        module_L6b_halfmodule_axial_hole_sensor0: [     -28.777,     -29.660,      713.09] [  2.8339e-16,     -1.0000, -2.3118e-16] [     0.99954,  2.9004e-16,   -0.030479] [    0.030479, -2.2243e-16,     0.99954]
+Get Sensors local to global transformation
+[     -28.777,     -29.660,      713.09]
+[
+2.833881839177849E-16 0.9995354202008792 0.030478578770211703
+-1.0000000000000002 2.900445488641071E-16 -2.206952950010849E-16
+-2.3117835920274536E-16 -0.030478578770211706 0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     -50.509,     -29.660,      711.88]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+        module_L6b_halfmodule_axial_slot_sensor0: [      72.166,     -29.660,      710.01] [  2.8328e-16,      1.0000,  4.3261e-16] [    -0.99954,  2.6974e-16,    0.030479] [    0.030479, -4.4105e-16,     0.99954]
+Get Sensors local to global transformation
+[      72.166,     -29.660,      710.01]
+[
+2.8328188522018863E-16 -0.9995354202008792 0.030478578770211758
+1.0000000000000002 2.697417369189828E-16 -4.4273989992611626E-16
+4.3261254936709707E-16 0.03047857877021176 0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[      50.481,     -29.660,      711.88]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+       module_L6t_halfmodule_stereo_hole_sensor0: [     -29.203,      32.200,      697.47] [   -0.049956,    -0.99875,   0.0015233] [     0.99829,   -0.049979,   -0.030440] [    0.030479,  2.6021e-18,     0.99954]
+Get Sensors local to global transformation
+[     -29.203,      32.200,      697.47]
+[
+-0.04995594995825853 0.99828626119962 0.030478578770211706
+-0.9987502603949663 -0.04997916927067853 1.0757288488873528E-18
+0.0015232940474861224 -0.030440488483217433 0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     -50.458,      32.200,      696.25]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+       module_L6t_halfmodule_stereo_slot_sensor0: [      71.639,      27.146,      694.40] [    0.049956,     0.99875,  -0.0015233] [    -0.99829,    0.049979,    0.030440] [    0.030479, -2.1858e-16,     0.99954]
+Get Sensors local to global transformation
+[      71.639,      27.146,      694.40]
+[
+0.049955949958257986 -0.99828626119962 0.030478578770211595
+0.9987502603949663 0.049979169270677984 -2.2110582224230123E-16
+-0.0015232940474858793 0.030440488483217332 0.9995354202008792
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[      50.430,      27.146,      696.25]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+       module_L6b_halfmodule_stereo_hole_sensor0: [     -28.966,     -32.200,      705.23] [   -0.049956,     0.99875,   0.0015233] [     0.99829,    0.049979,   -0.030440] [   -0.030479,  5.6877e-16,    -0.99954]
+Get Sensors local to global transformation
+[     -28.966,     -32.200,      705.23]
+[
+-0.04995594995825853 0.99828626119962 -0.030478578770211706
+0.9987502603949663 0.049979169270678546 5.673664091213873E-16
+0.0015232940474866883 -0.030440488483217405 -0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     -50.458,     -32.200,      704.01]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+       module_L6b_halfmodule_stereo_slot_sensor0: [      71.876,     -27.146,      702.15] [    0.049956,    -0.99875,  -0.0015233] [    -0.99829,   -0.049979,    0.030440] [   -0.030479,  5.7159e-16,    -0.99954]
+Get Sensors local to global transformation
+[      71.876,     -27.146,      702.15]
+[
+0.049955949958257986 -0.99828626119962 -0.030478578770211713
+-0.9987502603949663 -0.049979169270678005 5.644441243195517E-16
+-0.0015232940474866744 0.030440488483217402 -0.9995354202008792
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[      50.430,     -27.146,      704.01]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+        module_L6t_halfmodule_axial_hole_sensor0: [     -29.509,      29.660,      689.11] [  2.8339e-16,      1.0000,  3.3538e-16] [     0.99954, -2.7278e-16,   -0.030479] [   -0.030479,  3.4386e-16,    -0.99954]
+Get Sensors local to global transformation
+[     -29.509,      29.660,      689.11]
+[
+2.833881839177849E-16 0.9995354202008792 -0.030478578770211703
+1.0000000000000002 -2.727767915073409E-16 3.45595385271415E-16
+3.353755305620527E-16 -0.030478578770211706 -0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     -50.509,      29.660,      687.89]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+        module_L6t_halfmodule_axial_slot_sensor0: [      71.435,      29.660,      686.03] [  2.8328e-16,     -1.0000, -1.3394e-16] [    -0.99954, -2.8701e-16,    0.030479] [   -0.030479,  1.2525e-16,    -0.99954]
+Get Sensors local to global transformation
+[      71.435,      29.660,      686.03]
+[
+2.8328188522018863E-16 -0.9995354202008792 -0.030478578770211758
+-1.0000000000000002 -2.87009494275749E-16 1.2355078034638366E-16
+-1.33941340397701E-16 0.03047857877021176 -0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[      50.481,      29.660,      687.89]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+        module_L7b_halfmodule_axial_hole_sensor0: [     -22.681,     -32.660,      913.00] [  2.8339e-16,     -1.0000, -2.3118e-16] [     0.99954,  2.9004e-16,   -0.030479] [    0.030479, -2.2243e-16,     0.99954]
+Get Sensors local to global transformation
+[     -22.681,     -32.660,      913.00]
+[
+2.833881839177849E-16 0.9995354202008792 0.030478578770211703
+-1.0000000000000002 2.900445488641071E-16 -2.206952950010849E-16
+-2.3117835920274536E-16 -0.030478578770211706 0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     -50.513,     -32.660,      911.88]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+        module_L7b_halfmodule_axial_slot_sensor0: [      78.262,     -32.660,      909.92] [  2.8328e-16,      1.0000,  4.3261e-16] [    -0.99954,  2.6974e-16,    0.030479] [    0.030479, -4.4105e-16,     0.99954]
+Get Sensors local to global transformation
+[      78.262,     -32.660,      909.92]
+[
+2.8328188522018863E-16 -0.9995354202008792 0.030478578770211758
+1.0000000000000002 2.697417369189828E-16 -4.4273989992611626E-16
+4.3261254936709707E-16 0.03047857877021176 0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[      50.477,     -32.660,      911.88]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+       module_L7t_halfmodule_stereo_hole_sensor0: [     -23.107,      35.200,      897.38] [   -0.049956,    -0.99875,   0.0015233] [     0.99829,   -0.049979,   -0.030440] [    0.030479,  2.6021e-18,     0.99954]
+Get Sensors local to global transformation
+[     -23.107,      35.200,      897.38]
+[
+-0.04995594995825853 0.99828626119962 0.030478578770211706
+-0.9987502603949663 -0.04997916927067853 1.0757288488873528E-18
+0.0015232940474861224 -0.030440488483217433 0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     -50.462,      35.200,      896.25]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+       module_L7t_halfmodule_stereo_slot_sensor0: [      77.735,      30.146,      894.30] [    0.049956,     0.99875,  -0.0015233] [    -0.99829,    0.049979,    0.030440] [    0.030479, -2.1858e-16,     0.99954]
+Get Sensors local to global transformation
+[      77.735,      30.146,      894.30]
+[
+0.049955949958257986 -0.99828626119962 0.030478578770211595
+0.9987502603949663 0.049979169270677984 -2.2110582224230123E-16
+-0.0015232940474858793 0.030440488483217332 0.9995354202008792
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[      50.427,      30.146,      896.25]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+       module_L7b_halfmodule_stereo_hole_sensor0: [     -22.870,     -35.200,      905.13] [   -0.049956,     0.99875,   0.0015233] [     0.99829,    0.049979,   -0.030440] [   -0.030479,  5.6877e-16,    -0.99954]
+Get Sensors local to global transformation
+[     -22.870,     -35.200,      905.13]
+[
+-0.04995594995825853 0.99828626119962 -0.030478578770211706
+0.9987502603949663 0.049979169270678546 5.673664091213873E-16
+0.0015232940474866883 -0.030440488483217405 -0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     -50.462,     -35.200,      904.01]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+       module_L7b_halfmodule_stereo_slot_sensor0: [      77.972,     -30.146,      902.06] [    0.049956,    -0.99875,  -0.0015233] [    -0.99829,   -0.049979,    0.030440] [   -0.030479,  5.7159e-16,    -0.99954]
+Get Sensors local to global transformation
+[      77.972,     -30.146,      902.06]
+[
+0.049955949958257986 -0.99828626119962 -0.030478578770211713
+-0.9987502603949663 -0.049979169270678005 5.644441243195517E-16
+-0.0015232940474866744 0.030440488483217402 -0.9995354202008792
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[      50.427,     -30.146,      904.01]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+        module_L7t_halfmodule_axial_hole_sensor0: [     -23.413,      32.660,      889.02] [  2.8339e-16,      1.0000,  3.3538e-16] [     0.99954, -2.7278e-16,   -0.030479] [   -0.030479,  3.4386e-16,    -0.99954]
+Get Sensors local to global transformation
+[     -23.413,      32.660,      889.02]
+[
+2.833881839177849E-16 0.9995354202008792 -0.030478578770211703
+1.0000000000000002 -2.727767915073409E-16 3.45595385271415E-16
+3.353755305620527E-16 -0.030478578770211706 -0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     -50.512,      32.660,      887.89]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+        module_L7t_halfmodule_axial_slot_sensor0: [      77.531,      32.660,      885.94] [  2.8328e-16,     -1.0000, -1.3394e-16] [    -0.99954, -2.8701e-16,    0.030479] [   -0.030479,  1.2525e-16,    -0.99954]
+Get Sensors local to global transformation
+[      77.531,      32.660,      885.94]
+[
+2.8328188522018863E-16 -0.9995354202008792 -0.030478578770211758
+-1.0000000000000002 -2.87009494275749E-16 1.2355078034638366E-16
+-1.33941340397701E-16 0.03047857877021176 -0.9995354202008793
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[      50.478,      32.660,      887.89]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+     ECalScoring_BeamLeft_layer1_module0_sensor0: [      214.10,      122.80,      1443.0] [ -1.0366e-13,      1.0000,      0.0000] [     -1.0000, -1.0366e-13,      0.0000] [      0.0000,      0.0000,      1.0000]
+Get Sensors local to global transformation
+[      214.10,      122.80,      1443.0]
+[
+-1.0365648291493669E-13 -1.0 0.0
+1.0 -1.0365648291493669E-13 0.0
+0.0 0.0 1.0
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[      169.99,      122.80,      1448.9]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+  ECalScoring_ElectronGap_layer1_module0_sensor0: [     -23.382,      130.47,      1443.0] [ -1.0366e-13,      1.0000,      0.0000] [     -1.0000, -1.0366e-13,      0.0000] [      0.0000,      0.0000,      1.0000]
+Get Sensors local to global transformation
+[     -23.382,      130.47,      1443.0]
+[
+-1.0365648291493669E-13 -1.0 0.0
+1.0 -1.0365648291493669E-13 0.0
+0.0 0.0 1.0
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     -67.375,      130.47,      1441.6]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+    ECalScoring_BeamRight_layer1_module0_sensor0: [     -216.31,      121.30,      1443.0] [ -1.0366e-13,      1.0000,      0.0000] [     -1.0000, -1.0366e-13,      0.0000] [      0.0000,      0.0000,      1.0000]
+Get Sensors local to global transformation
+[     -216.31,      121.30,      1443.0]
+[
+-1.0365648291493669E-13 -1.0 0.0
+1.0 -1.0365648291493669E-13 0.0
+0.0 0.0 1.0
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     -260.21,      121.30,      1435.7]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+     ECalScoring_BeamLeft_layer2_module0_sensor0: [      214.10,     -122.80,      1443.0] [  3.1092e-13,     -1.0000,      0.0000] [      1.0000,  3.1092e-13,      0.0000] [     -0.0000,      0.0000,      1.0000]
+Get Sensors local to global transformation
+[      214.10,     -122.80,      1443.0]
+[
+3.1092367923500126E-13 1.0 0.0
+-1.0 3.1092367923500126E-13 0.0
+0.0 0.0 1.0
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[      169.99,     -122.80,      1448.9]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+  ECalScoring_ElectronGap_layer2_module0_sensor0: [     -23.382,     -130.47,      1443.0] [  3.1092e-13,     -1.0000,      0.0000] [      1.0000,  3.1092e-13,      0.0000] [     -0.0000,      0.0000,      1.0000]
+Get Sensors local to global transformation
+[     -23.382,     -130.47,      1443.0]
+[
+3.1092367923500126E-13 1.0 0.0
+-1.0 3.1092367923500126E-13 0.0
+0.0 0.0 1.0
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     -67.375,     -130.47,      1441.6]
+Get Sensors informations
+HPS_IDEAL_as_tw_top_0.5mm1mm_bot_1mm0.5mm_iter1:                                      Pos                                        u                                        v                                      uXv
+    ECalScoring_BeamRight_layer2_module0_sensor0: [     -216.31,     -121.30,      1443.0] [  3.1092e-13,     -1.0000,      0.0000] [      1.0000,  3.1092e-13,      0.0000] [     -0.0000,      0.0000,      1.0000]
+Get Sensors local to global transformation
+[     -216.31,     -121.30,      1443.0]
+[
+3.1092367923500126E-13 1.0 0.0
+-1.0 3.1092367923500126E-13 0.0
+0.0 0.0 1.0
+
+]
+Get Sensor Origin in SVT FRAME [rot -30.5mrad]PF::DEBUG::ROTATION GLOB-SVT::
+[[     0.99953,      0.0000,   -0.030495]
+ [      0.0000,      1.0000,      0.0000]
+ [    0.030495,      0.0000,     0.99953]
+[     -260.21,     -121.30,      1435.7]
+PrintGeometryDriver: ###########################################################
