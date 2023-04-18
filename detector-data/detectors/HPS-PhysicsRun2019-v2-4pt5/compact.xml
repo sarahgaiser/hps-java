@@ -198,14 +198,14 @@
       <millepede_constants>
         
         <!-- top half-module translations -->
-        <millepede_constant name="11101" value="0.0"/>
-        <millepede_constant name="11102" value="0.0"/>
-        <millepede_constant name="11103" value="0.0"/>
-        <millepede_constant name="11104" value="0.0"/>
-        <millepede_constant name="11105" value="0.0"/>
-        <millepede_constant name="11106" value="0.0"/>
-        <millepede_constant name="11107" value="0.0"/>
-        <millepede_constant name="11108" value="0.0"/>
+        <millepede_constant name="11101" value="0.0 + 0.0860"/>
+        <millepede_constant name="11102" value="0.0 + 0.11243500"/>
+        <millepede_constant name="11103" value="0.0 + 0.121"/>
+        <millepede_constant name="11104" value="0.0 + 0.25173500"/>
+        <millepede_constant name="11105" value="0.0 - 0.055"/>
+        <millepede_constant name="11106" value="0.0 + 0.054725000"/>
+        <millepede_constant name="11107" value="0.0 - 0.062"/>
+        <millepede_constant name="11108" value="0.0 + 0.061690000"/>
         <millepede_constant name="11109" value="0.0"/>
         <millepede_constant name="11110" value="0.0"/>
         <millepede_constant name="11111" value="0.0"/>
@@ -222,13 +222,13 @@
         <millepede_constant name="11122" value="0.0"/>
 	
         <millepede_constant name="11201" value="0.0"/>
-        <millepede_constant name="11202" value="0.0"/>
+        <millepede_constant name="11202" value="0.0 + 0.011281468"/>
         <millepede_constant name="11203" value="0.0"/>
-        <millepede_constant name="11204" value="0.0"/>
+        <millepede_constant name="11204" value="0.0 + 0.025258508"/>
         <millepede_constant name="11205" value="0.0"/>
-        <millepede_constant name="11206" value="0.0"/>
+        <millepede_constant name="11206" value="0.0 + 0.0054909800"/>
         <millepede_constant name="11207" value="0.0"/>
-        <millepede_constant name="11208" value="0.0"/>
+        <millepede_constant name="11208" value="0.0 + 0.0061898320"/>
         <millepede_constant name="11209" value="0.0"/>
         <millepede_constant name="11210" value="0.0"/>
         <millepede_constant name="11211" value="0.0"/>
@@ -340,14 +340,14 @@
         
         <!-- bottom half-module translations -->
         
-        <millepede_constant name="21101" value="0.0"/>
-        <millepede_constant name="21102" value="0.0"/>
-        <millepede_constant name="21103" value="0.0"/>
-        <millepede_constant name="21104" value="0.0"/>
-        <millepede_constant name="21105" value="0.0"/>
-        <millepede_constant name="21106" value="0.0"/>
-        <millepede_constant name="21107" value="0.0"/>
-        <millepede_constant name="21108" value="0.0"/>
+        <millepede_constant name="21101" value="0.0 + 0.09751"/>
+        <millepede_constant name="21102" value="0.0 + 0.2"/>
+        <millepede_constant name="21103" value="0.0 + 0.22984500"/>
+        <millepede_constant name="21104" value="0.0 + 0.285"/>
+        <millepede_constant name="21105" value="0.0 - 0.011940000"/>
+        <millepede_constant name="21106" value="0.0 + 0.012"/>
+        <millepede_constant name="21107" value="0.0 + 0.035422000"/>
+        <millepede_constant name="21108" value="0.0 - 0.0356"/>
         <millepede_constant name="21109" value="0.0"/>
         <millepede_constant name="21110" value="0.0"/>
         <millepede_constant name="21111" value="0.0"/>
@@ -363,13 +363,13 @@
         <millepede_constant name="21121" value="0.0"/>
         <millepede_constant name="21122" value="0.0"/>
         
-        <millepede_constant name="21201" value="0.0"/>
+        <millepede_constant name="21201" value="0.0 + 0.0097839280"/>
         <millepede_constant name="21202" value="0.0"/>
-        <millepede_constant name="21203" value="0.0"/>
+        <millepede_constant name="21203" value="0.0 + 0.023062116"/>
         <millepede_constant name="21204" value="0.0"/>
-        <millepede_constant name="21205" value="0.0"/>
+        <millepede_constant name="21205" value="0.0 - 0.0011980320"/>
         <millepede_constant name="21206" value="0.0"/>
-        <millepede_constant name="21207" value="0.0"/>
+        <millepede_constant name="21207" value="0.0 + 0.0035541616"/>
         <millepede_constant name="21208" value="0.0"/>
         <millepede_constant name="21209" value="0.0"/>
         <millepede_constant name="21210" value="0.0"/>
