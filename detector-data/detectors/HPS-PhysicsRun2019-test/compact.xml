@@ -198,7 +198,7 @@
       <millepede_constants>
         
         <!-- top half-module translations -->
-        <millepede_constant name="11101" value="1.0"/>
+        <millepede_constant name="11101" value="0.0"/>
         <millepede_constant name="11102" value="0.0"/>
         <millepede_constant name="11103" value="0.0"/>
         <millepede_constant name="11104" value="0.0"/>
