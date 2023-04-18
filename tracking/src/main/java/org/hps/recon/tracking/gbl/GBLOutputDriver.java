@@ -149,7 +149,6 @@ public class GBLOutputDriver extends Driver {
         trackCollectionName = val;
     }
 
-
     @Override
     protected void detectorChanged(Detector detector) {
         if (aidaGBL == null)
@@ -303,7 +302,7 @@ public class GBLOutputDriver extends Driver {
 
             // doMTresiduals(matchedTrack, sensorHits);
             if (b_doGBLkinks)
-                doGBLkinks(trk,gblKink, sensorNums);
+                doGBLkinks(trk, gblKink, sensorNums);
         }
     }
 

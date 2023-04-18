@@ -47,3 +47,7 @@ latex/
 
 # editor swap files
 .*.swp
+
+# doxygen documentation
+html/
+latex/
