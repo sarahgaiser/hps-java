@@ -545,6 +545,8 @@ public class GBLOutputDriver extends Driver {
         Map<Integer,HpsSiSensor> sensorMPIDs = new HashMap<Integer,HpsSiSensor>();
         double trackTime = 0.;
         double trackTimeSD = 0.;
+        TrackState trackState = trk.getTrackStates().get(0);
+        double tanL = trackState.getTanLambda();
 
         for (HpsSiSensor sensor : sensorHits.keySet()) {
             // Also fill here the sensorMPIDs map
@@ -555,7 +557,7 @@ public class GBLOutputDriver extends Driver {
             // the hit information available on each sensor is meaningful only along the measurement direction,
             // Hep3Vector hitPos = new BasicHep3Vector(sensorHits.get(sensor).getPosition());
             // instead: extract the information of the hit of the track at the sensor position before GBL
-            TrackState trackState = trk.getTrackStates().get(0);
+            // TrackState trackState = trk.getTrackStates().get(0);
             Hep3Vector hitTrackPos = TrackStateUtils.getLocationAtSensor(trackState, sensor, bfield);
 
             if (hitTrackPos == null) {
@@ -653,7 +655,7 @@ public class GBLOutputDriver extends Driver {
         int nres = (trackRes.getNInt() - 1);
 
         String vol = "_top";
-        if (trk.getTrackStates().get(0).getTanLambda() < 0)
+        if (tanL < 0)
             vol = "_bottom";
 
         // get the bias first 
@@ -736,10 +738,10 @@ public class GBLOutputDriver extends Driver {
                 aidaGBL.histogram2D(resFolder + "uresidual_GBL_vs_v_pred_" + sensorName).fill(extrapPosSensor.y(), trackRes.getDoubleVal(i_hit));
 
                 if (doResidualMaps) {
-                    res_vs_uv_map.get("uresidual_GBL_vs_u_v_"+sensorName).fill(extrapPosSensor.y(), hitPosSensorG.x(), trackRes.getDoubleVal(i_hit));
+                    res_vs_uv_map.get("uresidual_GBL_vs_u_v_" + sensorName).fill(extrapPosSensor.y(), hitPosSensorG.x(), trackRes.getDoubleVal(i_hit));
                 }
 
-                aidaGBL.histogram2D(resFolder+"uresidual_GBL_vs_tanLambda_" + sensorName).fill(trackState.getTanLambda(), trackRes.getDoubleVal(i_hit));
+                aidaGBL.histogram2D(resFolder+"uresidual_GBL_vs_tanLambda_" + sensorName).fill(tanL, trackRes.getDoubleVal(i_hit));
 
                 aidaGBL.histogram1D(epullFolder + "ureserror_GBL_" + sensorName).fill(trackRes.getFloatVal(i_hit));
                 aidaGBL.histogram1D(epullFolder + "ures_pull_GBL_" + sensorName).fill(trackRes.getDoubleVal(i_hit) / trackRes.getFloatVal(i_hit));
