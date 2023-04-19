@@ -87,6 +87,18 @@ public class GBLOutputDriver extends Driver {
     private double maxTanL = 999.9;
     
     private int nHits = 6;
+    int nTotalTracks = 0;
+    int nPassedTracks = 0;
+    
+    private TFileJna residualmaps;
+    private Map<String,TH3DJna> res_vs_uv_map = new HashMap<String,TH3DJna>();
+
+    private boolean doResidualMaps = true;
+    
+
+    public void setDoResidualMaps (boolean val) {
+        doResidualMaps = val;
+    }
 
     public void setDataRelationCollection (String val) {
         dataRelationCollection = val;
@@ -147,6 +159,13 @@ public class GBLOutputDriver extends Driver {
 
     public void setTrackCollectionName(String val) {
         trackCollectionName = val;
+    }
+
+    @Override 
+    protected void startOfData() {
+        if (doResidualMaps) {
+            residualmaps = new TFileJna("output_resmap_file.root","RECREATE");
+        }
     }
 
     @Override
@@ -232,6 +251,7 @@ public class GBLOutputDriver extends Driver {
             LOGGER.info("Track passed momentum");
 
             TrackState trackState = trk.getTrackStates().get(0);
+
             if (Math.abs(trackState.getTanLambda()) < minTanL)
                 continue;
 
@@ -559,7 +579,7 @@ public class GBLOutputDriver extends Driver {
             // select track charge
             if(trk.getCharge()>0) {
                 aidaGBL.histogram2D(hitFolder + "predicted_u_vs_v_pos_sensor_frame_" + sensor.getName()).fill(extrapPosSensor.y(), extrapPosSensor.x());
-            }else if(trk.getCharge()<0) {
+            } else if(trk.getCharge()<0) {
                 aidaGBL.histogram2D(hitFolder + "predicted_u_vs_v_neg_sensor_frame_" + sensor.getName()).fill(extrapPosSensor.y(), extrapPosSensor.x());
             }
 
@@ -706,6 +726,13 @@ public class GBLOutputDriver extends Driver {
                 aidaGBL.histogram1D(resFolder + "uresidual_GBL_" + sensorName).fill(trackRes.getDoubleVal(i_hit));
                 aidaGBL.histogram2D(resFolder + "uresidual_GBL_vs_u_hit_" + sensorName).fill(hitPosSensorG.x(), trackRes.getDoubleVal(i_hit));
                 aidaGBL.histogram2D(resFolder + "uresidual_GBL_vs_v_pred_" + sensorName).fill(extrapPosSensor.y(), trackRes.getDoubleVal(i_hit));
+
+                if (doResidualMaps) {
+                    res_vs_uv_map.get("uresidual_GBL_vs_u_v_"+sensorName).fill(extrapPosSensor.y(), hitPosSensorG.x(), trackRes.getDoubleVal(i_hit));
+                }
+
+                aidaGBL.histogram2D(resFolder+"uresidual_GBL_vs_tanLambda_" + sensorName).fill(trackState.getTanLambda(), trackRes.getDoubleVal(i_hit));
+
                 aidaGBL.histogram1D(epullFolder + "ureserror_GBL_" + sensorName).fill(trackRes.getFloatVal(i_hit));
                 aidaGBL.histogram1D(epullFolder + "ures_pull_GBL_" + sensorName).fill(trackRes.getDoubleVal(i_hit) / trackRes.getFloatVal(i_hit));
 
@@ -812,14 +839,22 @@ public class GBLOutputDriver extends Driver {
             aidaGBL.histogram2D(hitFolder + "predicted_u_vs_v_pos_sensor_frame_" + sensor.getName(), 100, -60, 60, 100, -25, 25);
             aidaGBL.histogram2D(hitFolder + "predicted_u_vs_v_neg_sensor_frame_" + sensor.getName(), 100, -60, 60, 100, -25, 25);
 
+            if (doResidualMaps) {
+                res_vs_uv_map.put("uresidual_GBL_vs_u_v_" + sensor.getName(),
+                                  new TH3DJna("uresidual_GBL_vs_u_v_" + sensor.getName(), 
+                                              "uresidual_GBL_vs_u_v_" + sensor.getName(),
+                                              300, -60, 60, 100, -20, 20, 100, -0.2, 0.2));
+            }
+
+
             xmax = 0.0006;
             if(l == 1){
                 xmax = 0.0002;
-            }else if(l == 2){
+             }else if(l == 2){
                 xmax = 0.0005;
-            }else if(l == 3 || l == 4){
+            } else if(l == 3 || l == 4){
                 xmax = 0.0006;
-            }else if(l >= 5) {
+            } else if(l >= 5) {
                 if (sens.isBottomLayer() && sens.isAxial())
                     xmax = 0.001;
                 if (sens.isTopLayer() && !sens.isAxial())
@@ -926,7 +961,7 @@ public class GBLOutputDriver extends Driver {
                 for (int i=0; i<type.length; i++){
                     // strip the trailing / from the object name and check if any else
                     String namtyp = type[i].substring(1);
-                    if(namtyp.contains("/")) {
+                    if (namtyp.contains("/")) {
                         continue;
                     } else {
                         IManagedObject obj = aidaGBL.tree().find(namtyp);
@@ -936,6 +971,15 @@ public class GBLOutputDriver extends Driver {
             } catch (IOException ex) {
                 LOGGER.log(Level.SEVERE, null, ex);
             }
+        }
+
+        if (doResidualMaps)  {
+            // write map
+            for (TH3DJna h : res_vs_uv_map.values())
+                h.write(residualmaps);
+    
+            residualmaps.close();
+            residualmaps.delete();
         }
     }
 }
