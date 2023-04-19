@@ -222,6 +222,8 @@ public class GBLOutputDriver extends Driver {
         RelationalTable hitToStrips = TrackUtils.getHitToStripsTable(event);
         RelationalTable hitToRotated = TrackUtils.getHitToRotatedTable(event);
         
+        nTotalTracks += tracks.size();
+
         for (Track trk : tracks) {
             // Some Track selection
 
@@ -315,6 +317,8 @@ public class GBLOutputDriver extends Driver {
                     i++;
                 }
             }
+
+            nPassedTracks++;
 
             doBasicGBLtrack(trk,sensorHits);
             if (b_doGBLresiduals) 
@@ -437,6 +441,10 @@ public class GBLOutputDriver extends Driver {
         // Momentum maps
         FillGBLTrackPlot(trkpFolder + "p_vs_phi", isTop, charge, trackState.getPhi(), trackp);
         FillGBLTrackPlot(trkpFolder + "p_vs_tanLambda", isTop, charge, trackState.getTanLambda(), trackp);
+        if (TrackUtils.isHoleTrack(trk))
+            FillGBLTrackPlot(trkpFolder + "p_vs_tanLambda_hole", isTop, charge, trackState.getTanLambda(), trackp);
+        else
+            FillGBLTrackPlot(trkpFolder + "p_vs_tanLambda_slot", isTop, charge, trackState.getTanLambda(), trackp);
         FillGBLTrackPlot(trkpFolder + "p_vs_phi_tanLambda", isTop, charge, trackState.getPhi(), trackState.getTanLambda(), trackp);
 
         double tanLambda = trackState.getTanLambda();
@@ -953,6 +961,10 @@ public class GBLOutputDriver extends Driver {
     }
 
     public void endOfData() {
+
+        System.out.println("GBLOutputDriver:: Number of processed Tracks " + nTotalTracks);
+        System.out.println("GBLOutputDriver:: Number of passed Tracks " + nPassedTracks);
+
         if (outputPlots != null) {
             try {
                 aidaGBL.saveAs(outputPlots);
