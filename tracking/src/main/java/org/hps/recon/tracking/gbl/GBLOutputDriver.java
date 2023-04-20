@@ -741,7 +741,7 @@ public class GBLOutputDriver extends Driver {
                     res_vs_uv_map.get("uresidual_GBL_vs_u_v_" + sensorName).fill(extrapPosSensor.y(), hitPosSensorG.x(), trackRes.getDoubleVal(i_hit));
                 }
 
-                aidaGBL.histogram2D(resFolder+"uresidual_GBL_vs_tanLambda_" + sensorName).fill(tanL, trackRes.getDoubleVal(i_hit));
+                aidaGBL.histogram2D(resFolder + "uresidual_GBL_vs_tanLambda_" + sensorName).fill(tanL, trackRes.getDoubleVal(i_hit));
 
                 aidaGBL.histogram1D(epullFolder + "ureserror_GBL_" + sensorName).fill(trackRes.getFloatVal(i_hit));
                 aidaGBL.histogram1D(epullFolder + "ures_pull_GBL_" + sensorName).fill(trackRes.getDoubleVal(i_hit) / trackRes.getFloatVal(i_hit));
@@ -834,7 +834,9 @@ public class GBLOutputDriver extends Driver {
             aidaGBL.histogram1D(resFolder + "bresidual_GBL_" + sensor.getName(), nbins, -xmax, xmax);
             aidaGBL.histogram1D(resFolder + "uresidual_GBL_" + sensor.getName(), nbins, -xmax, xmax);
             aidaGBL.histogram2D(resFolder + "uresidual_GBL_vs_u_hit_" + sensor.getName(), 100,-20.0, 20.0, 100,-0.1, 0.1);
-            aidaGBL.histogram2D(resFolder  +"uresidual_GBL_vs_v_pred_" + sensor.getName(), 300, -60.0, 60.0, 100,-0.1, 0.1);
+            aidaGBL.histogram2D(resFolder + "uresidual_GBL_vs_v_pred_" + sensor.getName(), 300, -60.0, 60.0, 100,-0.1, 0.1);
+            aidaGBL.histogram2D(resFolder + "uresidual_GBL_vs_tanLambda_" + sensor.getName(), 300, -60.0, 60.0, 200, -0.2, 0.2);
+            
             aidaGBL.histogram2D(resFolder + "uresidual_GBL_vs_dT_hit_" + sensor.getName(), 100, -10.0, 10.0, 100,-0.1, 0.1);
             aidaGBL.histogram2D(resFolder + "uresidual_GBL_vs_dTs_hit_" + sensor.getName(), 100, -5.0, 5.0, 100, -0.1, 0.1);
             aidaGBL.histogram1D(epullFolder + "breserror_GBL_" + sensor.getName(), nbins, 0.0, 0.1);
@@ -939,6 +941,8 @@ public class GBLOutputDriver extends Driver {
                 aidaGBL.histogram2D(trkpFolder + "p_Missing1Hit" + vol + charge, 8, 0, 8, nbins_p, 0.0, pmax);
                 aidaGBL.histogram2D(trkpFolder + "p_vs_phi" + vol + charge, nbins_t, -0.3, 0.3, nbins_p, 0., pmax);
                 aidaGBL.histogram2D(trkpFolder + "p_vs_tanLambda" + vol + charge, nbins_t, -0.2, 0.2, nbins_p, 0., pmax);
+                aidaGBL.histogram2D(trkpFolder + "p_vs_tanLambda_slot" + vol + charge, nbins_t, -0.2, 0.2, nbins_p, 0., pmax);
+                aidaGBL.histogram2D(trkpFolder + "p_vs_tanLambda_hole" + vol + charge, nbins_t, -0.2, 0.2, nbins_p, 0., pmax);
                 aidaGBL.histogram3D(trkpFolder + "p_vs_phi_tanLambda" + vol + charge, 50, -0.3, 0.3, 50, -0.2, 0.2, 100, 0., pmax);
 
                 aidaGBL.histogram2D(trkpFolder + "pT_vs_phi" + vol + charge, nbins_t, -0.3, 0.3, nbins_p, 0., pmax);
