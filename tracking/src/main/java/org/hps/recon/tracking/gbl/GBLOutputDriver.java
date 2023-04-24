@@ -92,12 +92,21 @@ public class GBLOutputDriver extends Driver {
     
     private TFileJna residualmaps;
     private Map<String,TH3DJna> res_vs_uv_map = new HashMap<String,TH3DJna>();
+    private Map<String,TH3DJna> res_vs_tanL_phi_map = new HashMap<String,TH3DJna>();
+
+    private TFileJna mom_maps;
+    private Map<String,TH3DJna> mom_tanL_vs_phi_map = new HashMap<String,TH3DJna>();
 
     private boolean doResidualMaps = true;
+    private boolean doTanLPhiMaps = true;
     
 
     public void setDoResidualMaps (boolean val) {
         doResidualMaps = val;
+    }
+
+    public void setDoTanLPhiMaps (boolean val) {
+        doTanLPhiMaps = val;
     }
 
     public void setDataRelationCollection (String val) {
@@ -161,10 +170,13 @@ public class GBLOutputDriver extends Driver {
         trackCollectionName = val;
     }
 
-    @Override 
+    @Override
     protected void startOfData() {
         if (doResidualMaps) {
             residualmaps = new TFileJna("output_resmap_file.root","RECREATE");
+        }
+        if (doTanLPhiMaps) {
+            mom_maps = new TFileJna("output_momentum_map_file.root","RECREATE");
         }
     }
 
@@ -547,6 +559,7 @@ public class GBLOutputDriver extends Driver {
         double trackTimeSD = 0.;
         TrackState trackState = trk.getTrackStates().get(0);
         double tanL = trackState.getTanLambda();
+        double phi = trackState.getPhi();
 
         for (HpsSiSensor sensor : sensorHits.keySet()) {
             // Also fill here the sensorMPIDs map
@@ -718,6 +731,14 @@ public class GBLOutputDriver extends Driver {
 
                 // General residuals Per volume
                 aidaGBL.histogram1D(resFolder + "uresidual_GBL" + vol).fill(trackRes.getDoubleVal(i_hit));
+                if (doResidualMaps) {
+                    if (trk.getCharge() > 0) {
+                        res_vs_tanL_phi_map.get("uresidual_GBL_vs_tanL_phi_" + vol + "_pos").fill(tanL, phi, trackRes.getDoubleVal(i_hit));
+                    } else {
+                        res_vs_tanL_phi_map.get("uresidual_GBL_vs_tanL_phi_" + vol + "_neg").fill(tanL, phi, trackRes.getDoubleVal(i_hit));
+                    }
+                    res_vs_tanL_phi_map.get("uresidual_GBL_vs_tanL_phi_" + vol).fill(tanL, phi, trackRes.getDoubleVal(i_hit));
+                }
 
                 if (trackRes.getIntVal(i_hit) < 9) 
                     // L1L4 
@@ -739,6 +760,7 @@ public class GBLOutputDriver extends Driver {
 
                 if (doResidualMaps) {
                     res_vs_uv_map.get("uresidual_GBL_vs_u_v_" + sensorName).fill(extrapPosSensor.y(), hitPosSensorG.x(), trackRes.getDoubleVal(i_hit));
+                    res_vs_tanL_phi_map.get("uresidual_GBL_vs_tanL_phi_" + sensorName).fill(tanL, phi, trackRes.getDoubleVal(i_hit));
                 }
 
                 aidaGBL.histogram2D(resFolder + "uresidual_GBL_vs_tanLambda_" + sensorName).fill(tanL, trackRes.getDoubleVal(i_hit));
@@ -856,8 +878,11 @@ public class GBLOutputDriver extends Driver {
                                   new TH3DJna("uresidual_GBL_vs_u_v_" + sensor.getName(), 
                                               "uresidual_GBL_vs_u_v_" + sensor.getName(),
                                               300, -60, 60, 100, -20, 20, 100, -0.2, 0.2));
+                res_vs_tanL_phi_map.put("uresidual_GBL_vs_tanL_phi_" + sensor.getName(),
+                                        new TH3DJna("uresidual_GBL_vs_tanL_phi_" + sensor.getName(), 
+                                                    "uresidual_GBL_vs_tanL_phi_" + sensor.getName(),
+                                                    300, -60, 60, 100, -20, 20, 200, -0.3, 0.3));
             }
-
 
             xmax = 0.0006;
             if(l == 1){
@@ -877,7 +902,7 @@ public class GBLOutputDriver extends Driver {
         }
 
         aidaGBL.histogram2D(kinkFolder + "lambda_kink_mod", mod_2dplot_bins, -0.5, mod_2dplot_bins-0.5, nbins, -0.001, 0.001);
-        aidaGBL.profile1D(kinkFolder + "lambda_kink_mod_p", mod_2dplot_bins, -0.5,mod_2dplot_bins-0.5);
+        aidaGBL.profile1D(kinkFolder + "lambda_kink_mod_p", mod_2dplot_bins, -0.5, mod_2dplot_bins-0.5);
         aidaGBL.histogram2D(kinkFolder + "phi_kink_mod", mod_2dplot_bins, -0.5, mod_2dplot_bins-0.5, nbins, -0.001, 0.001);
         aidaGBL.profile1D(kinkFolder + "phi_kink_mod_p", mod_2dplot_bins, -0.5, mod_2dplot_bins-0.5);
 
@@ -943,7 +968,21 @@ public class GBLOutputDriver extends Driver {
                 aidaGBL.histogram2D(trkpFolder + "p_vs_tanLambda" + vol + charge, nbins_t, -0.2, 0.2, nbins_p, 0., pmax);
                 aidaGBL.histogram2D(trkpFolder + "p_vs_tanLambda_slot" + vol + charge, nbins_t, -0.2, 0.2, nbins_p, 0., pmax);
                 aidaGBL.histogram2D(trkpFolder + "p_vs_tanLambda_hole" + vol + charge, nbins_t, -0.2, 0.2, nbins_p, 0., pmax);
-                aidaGBL.histogram3D(trkpFolder + "p_vs_phi_tanLambda" + vol + charge, 50, -0.3, 0.3, 50, -0.2, 0.2, 100, 0., pmax);
+                // aidaGBL.histogram3D(trkpFolder + "p_vs_phi_tanLambda" + vol + charge, 50, -0.3, 0.3, 50, -0.2, 0.2, 100, 0., pmax);
+                
+                if (doTanLPhiMaps) {
+                    mom_tanL_vs_phi_map.put("p_vs_phi_tanLambda" + vol + charge,
+                                            new TH3DJna("p_vs_tanL_phi_" + vol + charge, 
+                                                        "p_vs_tanL_phi_" + vol + charge, 
+                                                        300, -60, 60, 100, -20, 20, 200, -0.3, 0.3));
+                }
+
+                if (doResidualMaps) {
+                    res_vs_tanL_phi_map.put("uresidual_GBL_vs_tanL_phi_" + vol + charge,
+                                            new TH3DJna("uresidual_GBL_vs_tanL_phi_" + vol + charge, 
+                                                        "uresidual_GBL_vs_tanL_phi_" + vol + charge,
+                                                        300, -60, 60, 100, -20, 20, 200, -0.3, 0.3));
+                }
 
                 aidaGBL.histogram2D(trkpFolder + "pT_vs_phi" + vol + charge, nbins_t, -0.3, 0.3, nbins_p, 0., pmax);
                 aidaGBL.histogram2D(trkpFolder + "pT_vs_tanLambda" + vol + charge, nbins_t, -0.2, 0.2, nbins_p, 0., pmax);
@@ -995,9 +1034,19 @@ public class GBLOutputDriver extends Driver {
             // write map
             for (TH3DJna h : res_vs_uv_map.values())
                 h.write(residualmaps);
-    
+
+            for (TH3DJna h : res_vs_tanL_phi_map.values())
+                h.write(residualmaps);
+
             residualmaps.close();
             residualmaps.delete();
+        }
+        if (doTanLPhiMaps) {
+            for (TH3DJna h : mom_tanL_vs_phi_map.values())
+                h.write(mom_maps);
+
+            mom_maps.close();
+            mom_maps.delete();
         }
     }
 }
