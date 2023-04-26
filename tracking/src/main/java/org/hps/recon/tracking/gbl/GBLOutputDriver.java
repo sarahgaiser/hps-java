@@ -97,8 +97,8 @@ public class GBLOutputDriver extends Driver {
     // private TFileJna mom_maps;
     // private Map<String,TH3DJna> mom_tanL_vs_phi_map = new HashMap<String,TH3DJna>();
 
-    private boolean doResidualMaps = true;
-    private boolean doTanLPhiMaps = true;
+    private boolean doResidualMaps = false;
+    private boolean doTanLPhiMaps = false;
     
 
     public void setDoResidualMaps (boolean val) {
@@ -458,7 +458,7 @@ public class GBLOutputDriver extends Driver {
             FillGBLTrackPlot(trkpFolder + "p_vs_tanLambda_hole", isTop, charge, trackState.getTanLambda(), trackp);
         else
             FillGBLTrackPlot(trkpFolder + "p_vs_tanLambda_slot", isTop, charge, trackState.getTanLambda(), trackp);
-        FillGBLTrackPlot(trkpFolder + "p_vs_phi_tanLambda", isTop, charge, trackState.getPhi(), trackState.getTanLambda(), trackp);
+        // FillGBLTrackPlot(trkpFolder + "p_vs_phi_tanLambda", isTop, charge, trackState.getPhi(), trackState.getTanLambda(), trackp);
 
         double tanLambda = trackState.getTanLambda();
         double cosLambda = 1. / (Math.sqrt(1 + tanLambda * tanLambda));
