@@ -967,7 +967,7 @@ public class GBLOutputDriver extends Driver {
                 aidaGBL.histogram2D(trkpFolder + "p_Missing1Hit" + vol + charge, 8, 0, 8, nbins_p, 0.0, pmax);
                 aidaGBL.histogram2D(trkpFolder + "p_vs_phi" + vol + charge, nbins_t, -0.3, 0.3, nbins_p, 0., pmax);
                 aidaGBL.histogram2D(trkpFolder + "p_vs_tanLambda" + vol + charge, nbins_t, -0.2, 0.2, nbins_p, 0., pmax);
-                aidaGBL.histogram2D(trkpFolder + "phi_vs_tanLambda" + vol + charge, nbins_t, -0.2, 0.2, nbins_t, -0.3, 0.3);
+                aidaGBL.histogram2D("phi_vs_tanLambda" + vol + charge, nbins_t, -0.2, 0.2, nbins_t, -0.3, 0.3);
                 aidaGBL.histogram2D(trkpFolder + "p_vs_tanLambda_slot" + vol + charge, nbins_t, -0.2, 0.2, nbins_p, 0., pmax);
                 aidaGBL.histogram2D(trkpFolder + "p_vs_tanLambda_hole" + vol + charge, nbins_t, -0.2, 0.2, nbins_p, 0., pmax);
                 // aidaGBL.histogram3D(trkpFolder + "p_vs_phi_tanLambda" + vol + charge, 50, -0.3, 0.3, 50, -0.2, 0.2, 100, 0., pmax);
