@@ -94,8 +94,8 @@ public class GBLOutputDriver extends Driver {
     private Map<String,TH3DJna> res_vs_uv_map = new HashMap<String,TH3DJna>();
     private Map<String,TH3DJna> res_vs_tanL_phi_map = new HashMap<String,TH3DJna>();
 
-    private TFileJna mom_maps;
-    private Map<String,TH3DJna> mom_tanL_vs_phi_map = new HashMap<String,TH3DJna>();
+    // private TFileJna mom_maps;
+    // private Map<String,TH3DJna> mom_tanL_vs_phi_map = new HashMap<String,TH3DJna>();
 
     private boolean doResidualMaps = true;
     private boolean doTanLPhiMaps = true;
@@ -175,9 +175,9 @@ public class GBLOutputDriver extends Driver {
         if (doResidualMaps) {
             residualmaps = new TFileJna("output_resmap_file.root","RECREATE");
         }
-        if (doTanLPhiMaps) {
-            mom_maps = new TFileJna("output_momentum_map_file.root","RECREATE");
-        }
+        // if (doTanLPhiMaps) {
+        //     mom_maps = new TFileJna("output_momentum_map_file.root","RECREATE");
+        // }
     }
 
     @Override
@@ -453,6 +453,7 @@ public class GBLOutputDriver extends Driver {
         // Momentum maps
         FillGBLTrackPlot(trkpFolder + "p_vs_phi", isTop, charge, trackState.getPhi(), trackp);
         FillGBLTrackPlot(trkpFolder + "p_vs_tanLambda", isTop, charge, trackState.getTanLambda(), trackp);
+        FillGBLTrackPlot("phi_vs_tanLambda", isTop, charge, trackState.getTanLambda(), trackState.getPhi());
         if (TrackUtils.isHoleTrack(trk))
             FillGBLTrackPlot(trkpFolder + "p_vs_tanLambda_hole", isTop, charge, trackState.getTanLambda(), trackp);
         else
@@ -966,16 +967,17 @@ public class GBLOutputDriver extends Driver {
                 aidaGBL.histogram2D(trkpFolder + "p_Missing1Hit" + vol + charge, 8, 0, 8, nbins_p, 0.0, pmax);
                 aidaGBL.histogram2D(trkpFolder + "p_vs_phi" + vol + charge, nbins_t, -0.3, 0.3, nbins_p, 0., pmax);
                 aidaGBL.histogram2D(trkpFolder + "p_vs_tanLambda" + vol + charge, nbins_t, -0.2, 0.2, nbins_p, 0., pmax);
+                aidaGBL.histogram2D(trkpFolder + "phi_vs_tanLambda" + vol + charge, nbins_t, -0.2, 0.2, nbins_t, -0.3, 0.3);
                 aidaGBL.histogram2D(trkpFolder + "p_vs_tanLambda_slot" + vol + charge, nbins_t, -0.2, 0.2, nbins_p, 0., pmax);
                 aidaGBL.histogram2D(trkpFolder + "p_vs_tanLambda_hole" + vol + charge, nbins_t, -0.2, 0.2, nbins_p, 0., pmax);
                 // aidaGBL.histogram3D(trkpFolder + "p_vs_phi_tanLambda" + vol + charge, 50, -0.3, 0.3, 50, -0.2, 0.2, 100, 0., pmax);
                 
-                if (doTanLPhiMaps) {
-                    mom_tanL_vs_phi_map.put("p_vs_phi_tanLambda" + vol + charge,
-                                            new TH3DJna("p_vs_tanL_phi_" + vol + charge, 
-                                                        "p_vs_tanL_phi_" + vol + charge, 
-                                                        300, -60, 60, 100, -20, 20, 200, -0.3, 0.3));
-                }
+                // if (doTanLPhiMaps) {
+                //     mom_tanL_vs_phi_map.put("p_vs_phi_tanLambda" + vol + charge,
+                //                             new TH3DJna("p_vs_tanL_phi_" + vol + charge, 
+                //                                         "p_vs_tanL_phi_" + vol + charge, 
+                //                                         300, -60, 60, 100, -20, 20, 200, -0.3, 0.3));
+                // }
 
                 if (doResidualMaps) {
                     res_vs_tanL_phi_map.put("uresidual_GBL_vs_tanL_phi_" + vol + charge,
@@ -1041,12 +1043,12 @@ public class GBLOutputDriver extends Driver {
             residualmaps.close();
             residualmaps.delete();
         }
-        if (doTanLPhiMaps) {
-            for (TH3DJna h : mom_tanL_vs_phi_map.values())
-                h.write(mom_maps);
+        // if (doTanLPhiMaps) {
+        //     for (TH3DJna h : mom_tanL_vs_phi_map.values())
+        //         h.write(mom_maps);
 
-            mom_maps.close();
-            mom_maps.delete();
-        }
+        //     mom_maps.close();
+        //     mom_maps.delete();
+        // }
     }
 }
