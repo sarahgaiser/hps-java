@@ -136,7 +136,6 @@ public class KalmanPatRecDriver extends Driver {
         logger = Logger.getLogger(KalmanPatRecDriver.class.getName());
         if (logLevel != null) {
             logger.setLevel(logLevel);
-            //LogManager.getLogManager().getLogger(Logger.GLOBAL_LOGGER_NAME).setLevel(logLevel);
         }
         verbose = (logger.getLevel()==Level.FINE);
         System.out.format("KalmanPatRecDriver: entering detectorChanged, logger level = %s\n", logger.getLevel().getName());
@@ -281,15 +280,15 @@ public class KalmanPatRecDriver extends Driver {
                 
         List<Track> outputFullTracks = new ArrayList<Track>();
         
-        //For additional track information
+        // For additional track information
         List<TrackData> trackDataCollection = new ArrayList<TrackData>();
         List<LCRelation> trackDataRelations = new ArrayList<LCRelation>();
         
-        //For GBL Refitting
+        // For GBL Refitting
         List<GBLStripClusterData> allClstrs = new ArrayList<GBLStripClusterData>();
         List<LCRelation> gblStripClusterDataRelations  =  new ArrayList<LCRelation>();
         
-        //For hit-on-track residuals information
+        // For hit-on-track residuals information
         List<TrackResidualsData> trackResiduals = new ArrayList<TrackResidualsData>();
         List<LCRelation> trackResidualsRelations = new ArrayList<LCRelation>();
        

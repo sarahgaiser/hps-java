@@ -687,7 +687,7 @@
           <compositeAlign>true</compositeAlign>
           <constrainedFit>true</constrainedFit>
           <constrainedBSFit>false</constrainedBSFit>
-          <trackSide>-1</trackSide> <!--hole-->
+          <trackSide>-1</trackSide> <!--no selection-->
           <writeMilleBinary>true</writeMilleBinary>
           <milleBinaryFileName>${outputFile}_all_millepede_kf_PC.bin</milleBinaryFileName>
           <writeMilleChi2Cut>5</writeMilleChi2Cut>  <!-- Chi2/Ndf -->
