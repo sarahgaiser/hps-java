@@ -482,6 +482,10 @@ public abstract class SurveyVolume {
                     System.out.printf("%s: DONE Apply survey results to %s\n", this.getClass().getSimpleName(),
                             this.getName());
 
+            } else {
+                if (debug_local || debug)
+                    System.out.printf("%s: Node not set for %s\n", this.getClass().getSimpleName(),
+                            this.getName());
             }
 
             if (debug_local || debug)
