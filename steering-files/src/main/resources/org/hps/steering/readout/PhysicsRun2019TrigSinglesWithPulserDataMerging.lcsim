@@ -35,6 +35,7 @@
 
        
         <!-- Trigger Simulation -->
+        <driver name="SinglesTrigger2"/>
         <driver name="SinglesTrigger"/>
 
 	<driver name="SvtDigitizationWithPulserDataMergingDriver"/>
@@ -207,7 +208,7 @@
                 is useful if some analysis needs to be performed at the readout
                 level. Otherwise, this should be left off.
             -->
-            <writeTriggerPathTruth>false</writeTriggerPathTruth>
+            <writeTriggerPathTruth>true</writeTriggerPathTruth>
         </driver>
 
         <!--
@@ -407,6 +408,19 @@
 
         </driver>
                     
+       <driver name="SinglesTrigger2" type="org.hps.readout.trigger2019.SinglesTrigger2019ReadoutDriver">
+            <inputCollectionNameEcal>EcalClustersGTP</inputCollectionNameEcal>
+
+            <inputCollectionNameHodo>HodoscopePatterns</inputCollectionNameHodo>
+            
+            <triggerType>singles2</triggerType>
+
+            <daqConfigurationAppliedintoReadout>true</daqConfigurationAppliedintoReadout>
+
+            <!-- Units of 2 ns beam bunches. -->
+            <deadTime>15</deadTime>
+
+        </driver>
 
         <driver name="SvtDigitizationWithPulserDataMergingDriver" type="org.hps.digi.SvtDigitizationWithPulserDataMergingReadoutDriver">
           <pulserDataCollectionName>PulserDataSVTRawTrackerHits</pulserDataCollectionName>
