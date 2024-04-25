@@ -54,8 +54,7 @@
             <outputCollectionName>EcalClustersCorr</outputCollectionName>
         </driver>
         <!-- Hodo reconstruction drivers -->
-        <driver name="HodoRunningPedestal"
-		type="org.hps.recon.ecal.HodoRunningPedestalDriver">
+        <driver name="HodoRunningPedestal" type="org.hps.recon.ecal.HodoRunningPedestalDriver">
             <inputCollectionName>HodoscopeReadoutHits</inputCollectionName>
             <logLevel>CONFIG</logLevel>
             <isMC>true</isMC>

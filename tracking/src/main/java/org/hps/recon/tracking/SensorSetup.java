@@ -56,7 +56,7 @@ public class SensorSetup extends RawTrackerHitSensorSetup {
      * @param fittedHits The collection of FittedRawTrackerHits to load. 
      */
     public void loadFittedHits(List< LCRelation > fittedHits) {
-
+	///System.out.println("DEBUG::SensorSetup: loadFittedHits start");
         for (LCRelation fittedHit : fittedHits) { 
 
             Boolean skipHit = false;
@@ -70,6 +70,7 @@ public class SensorSetup extends RawTrackerHitSensorSetup {
                 for (String sensorName : sensorNames_) {
                     if (name.contains(sensorName)) {
                         skipHit = true;
+	///		System.out.println("DEBUG::SensorSetup: Skip hit");
                         break;
                     }
                 }
