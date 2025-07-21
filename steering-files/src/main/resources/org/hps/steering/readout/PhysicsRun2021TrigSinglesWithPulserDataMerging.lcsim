@@ -79,36 +79,36 @@
             <collectionName>EcalHits</collectionName>
             
             <!-- Units of ns. -->
-            <readoutWindowBefore>8.0</readoutWindowBefore>
+	    <readoutWindowBefore>8.0</readoutWindowBefore>
             <readoutWindowAfter>32.0</readoutWindowAfter>
-            <persistent>false</persistent>
+	    <persistent>false</persistent>
         </driver>
         
         <driver name="MCParticleInputDriver" type="org.hps.readout.MCParticleReadoutDriver">
             <collectionName>MCParticle</collectionName>
             
             <!-- Units of ns. -->
-            <readoutWindowBefore>32.0</readoutWindowBefore>
+	    <readoutWindowBefore>32.0</readoutWindowBefore>
             <readoutWindowAfter>32.0</readoutWindowAfter>
-            <persistent>false</persistent>
+	    <persistent>false</persistent>
         </driver>
 
         <driver name="HodoscopeHitsOutputDriver" type="org.hps.readout.SimTrackerHitReadoutDriver">
             <collectionName>HodoscopeHits</collectionName>
             
             <!-- Units of ns. -->
-            <readoutWindowBefore>8.0</readoutWindowBefore>
+	    <readoutWindowBefore>8.0</readoutWindowBefore>
             <readoutWindowAfter>32.0</readoutWindowAfter>
-            <persistent>false</persistent>
+	    <persistent>false</persistent>
         </driver>
         
         <driver name="TrackerHitsSVTOutputDriver" type="org.hps.readout.svt.SVTTrackerHitReadoutDriver">
             <collectionName>TrackerHits</collectionName>
             
             <!-- Units of ns. -->
-            <readoutWindowBefore>8.0</readoutWindowBefore>
+	    <readoutWindowBefore>8.0</readoutWindowBefore>
             <readoutWindowAfter>32.0</readoutWindowAfter>
-            <persistent>false</persistent>
+ 	    <persistent>false</persistent>
         </driver>
         
 
@@ -116,17 +116,17 @@
             <collectionName>EcalReadoutHits</collectionName>
             
             <!-- Units of ns. -->
-            <readoutWindowBefore>32.0</readoutWindowBefore>
+	    <readoutWindowBefore>32.0</readoutWindowBefore>
             <readoutWindowAfter>32.0</readoutWindowAfter>
-            <persistent>false</persistent>
+	    <persistent>false</persistent>
         </driver>
 
         <driver name="HodoscopeRawHitsInputDriver" type="org.hps.digi.RawTrackerHitReadoutDriver">
             <collectionName>HodoReadoutHits</collectionName>
             
             <!-- Units of ns. -->
-            <readoutWindowBefore>32.0</readoutWindowBefore>
-            <readoutWindowAfter>32.0</readoutWindowAfter>
+	    <readoutWindowBefore>32.0</readoutWindowBefore>
+	    <readoutWindowAfter>32.0</readoutWindowAfter>
             <persistent>false</persistent>
         </driver>
 
@@ -140,8 +140,8 @@
         <driver name="SvtRawHitsInputDriver" type="org.hps.digi.SvtPulserReadoutDriver">
           <collectionName>SVTRawTrackerHits</collectionName>            
           <!-- Units of ns. -->
-          <readoutWindowBefore>32.0</readoutWindowBefore>
-          <readoutWindowAfter>32.0</readoutWindowAfter>
+	  <readoutWindowBefore>32.0</readoutWindowBefore>
+	  <readoutWindowAfter>32.0</readoutWindowAfter>
           <persistent>false</persistent>
         </driver>
 
