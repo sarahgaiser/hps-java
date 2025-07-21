@@ -16,6 +16,7 @@
         <!-- SVT hit reconstruction drivers -->
         <driver name="RawTrackerHitSensorSetup"/>
         <driver name="RawTrackerHitFitterDriver" />
+	<driver name="RawHitTimeSmearer"/>
         <driver name="TrackerHitDriver"/>
 
         <driver name="KalmanPatRecDriver"/> 
@@ -87,6 +88,13 @@
           <isMC>true</isMC>
           <debug>false</debug>
         </driver>
+
+	<!-- hit time smearing -->
+	<driver name="RawHitTimeSmearer" type="org.hps.recon.tracking.RawHitTimeSmearer">
+          <smearTimeFile>timeSmearing-1ns-2021.txt</smearTimeFile>
+          <debug>false</debug>
+        </driver>
+
         <!-- 
              Use the fitted raw tracker hits and create 1D clusters using a 
              nearest neighbor algorithm. 

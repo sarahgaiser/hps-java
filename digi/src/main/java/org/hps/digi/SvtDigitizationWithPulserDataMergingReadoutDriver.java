@@ -329,6 +329,9 @@ public class SvtDigitizationWithPulserDataMergingReadoutDriver extends ReadoutDr
                 // Check each hit to see if it is still in-time.
                 for(int i = 0; i < pulserHitQueues.length; i++) {
                     if(pulserHitQueues[i] != null) {
+                        System.out.printf("current time: %d", ReadoutDataManager.getCurrentTime());
+                        System.out.printf("readoutLatency: %d", readoutLatency);
+                        System.out.printf("pileupCutoff: %d", pileupCutoff);
                         // Remove old hits.
                         while(!pulserHitQueues[i].isEmpty() && pulserHitQueues[i].peek().time < ReadoutDataManager.getCurrentTime() - (readoutLatency + pileupCutoff)) {
                             pulserHitQueues[i].poll();

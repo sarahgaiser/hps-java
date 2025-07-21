@@ -208,7 +208,7 @@
                 is useful if some analysis needs to be performed at the readout
                 level. Otherwise, this should be left off.
             -->
-            <writeTriggerPathTruth>false</writeTriggerPathTruth>
+            <writeTriggerPathTruth>true</writeTriggerPathTruth>
         </driver>
 
         <!--
@@ -331,7 +331,7 @@
                 included in readout automatically - the truth hit driver above
                 does not need to be persistent.
             -->
-            <writeTruth>false</writeTruth>
+            <writeTruth>true</writeTruth>
             
             <!--
                 As above, except that truth relations are persisted for the
@@ -339,7 +339,7 @@
                 is useful if some analysis needs to be performed at the readout
                 level. Otherwise, this should be left off.
             -->
-            <writeTriggerPathTruth>false</writeTriggerPathTruth>
+            <writeTriggerPathTruth>true</writeTriggerPathTruth>
         </driver>
 
         <!--
@@ -405,6 +405,7 @@
             
             <!-- Units of 2 ns beam bunches. -->
             <deadTime>15</deadTime>            
+	    <persistent>true</persistent>
 
         </driver>
 
@@ -419,7 +420,7 @@
 
             <!-- Units of 2 ns beam bunches. -->
             <deadTime>15</deadTime>
-
+	    <persistent>true</persistent>
         </driver>
                     
 
