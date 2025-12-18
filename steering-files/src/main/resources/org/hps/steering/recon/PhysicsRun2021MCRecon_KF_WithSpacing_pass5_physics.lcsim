@@ -177,7 +177,6 @@
             <outputFilePath>${outputFile}.slcio</outputFilePath>
         </driver>
         <driver name="CleanupDriver" type="org.lcsim.recon.tracking.digitization.sisim.config.ReadoutCleanupDriver"/>
-        
     </drivers>
 </lcsim>
 
