@@ -39,7 +39,7 @@
 
         <!-- Event filtering -->
         <driver name="LCIOWriter"/>
-        <driver name="AidaSaveDriver"/>
+        <!--<driver name="AidaSaveDriver"/>-->
         <driver name="CleanupDriver"/>
 
     </execute>
